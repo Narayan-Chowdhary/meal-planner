@@ -1,0 +1,21 @@
+
+
+@media screen and (max-width: 500px) {
+
+    .text{
+        font-size: 16px !important;
+    }
+.headingtext{
+    font-size: 24px !important;
+}
+.mealcard{
+min-width: 100px!important;
+}
+.css-2imjyh{
+    flex-wrap:nowrap !important
+}
+.cardButton{
+    font-weight: 400!important;
+    padding: 10px !important;
+}
+}

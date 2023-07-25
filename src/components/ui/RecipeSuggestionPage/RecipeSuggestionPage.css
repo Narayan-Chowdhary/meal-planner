@@ -1,0 +1,19 @@
+.chipBackground{
+    background-color: rgb(67, 85, 241);
+    border:2px solid rgb(67, 85, 241);
+    color:"white" !important;
+}
+.card_text {
+    font-family: "Inter";
+    font-size: "18px"; 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ }
+
+ .Icons_in-card {
+    font-size: 30px;
+    color: #a7a7ab;
+    cursor: pointer;
+}

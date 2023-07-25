@@ -1,0 +1,53 @@
+ /* .cardBox {
+    background-color: rgba(255, 255, 255, 0.631);
+    border-radius: 30px;
+    height: 100%;
+} 
+
+.imageBox1 {
+
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+
+   
+}
+
+.cardButton {
+    background-color: #4F46E5 !important;
+
+    border-radius: 6px !important;;
+    text-Transform: none !important;
+    font-weight: 600 !important;
+
+           
+        
+}
+
+.cardMainText {
+
+    margin-top: 5%;
+    margin-bottom: 2%
+}
+.internFont{
+    font-family: Inter ;
+}
+
+@media screen and (max-width: 777px) {
+    .imageBox1{
+     display: block;
+    
+    }
+    #bpimage{
+        width: 100%
+    }
+}  */
+
+.card_text {
+    font-family: "Inter";
+    font-size: "18px"; 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ }

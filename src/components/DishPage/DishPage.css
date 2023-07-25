@@ -1,0 +1,25 @@
+.BgImage {
+
+    border-radius: 40px;
+    object-fit:contain;
+    background-color: aliceblue;
+ 
+}
+
+.Bmi_Box {
+    background-color:#4F46E5;
+    /* width: 20px;
+    height: 12vh; */
+    display: flex;
+    padding:10px;
+    justify-content: center;
+    border-radius: 15px;
+    align-items: center;
+    text-decoration: none;
+    
+    
+}
+/* .Bmi_Box:hover{
+    width:6vw;
+    height:12vh
+} */

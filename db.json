@@ -1,0 +1,4586 @@
+{
+  "users": [
+    {
+      "id": "6268a76a-56e2-4930-9d4a-67aa97bcd349",
+      "email": "narayan.chowdhary@hiteshi.com",
+      "password": "Narayan@123",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687520113/b0o0j1pu9myynfaqpzvl.jpg",
+      "name": "Narayan chowdhary",
+      "phone": "9725854548",
+      "bmi": 23,
+      "role": "admin"
+    },
+    {
+      "name": "paranjay",
+      "id": "408ee5c8-15b3-4aeb-b7f9-1f05de750b58",
+      "email": "typicode123@gmail.com",
+      "phone": "6232725216",
+      "password": "Shukla@1234",
+      "ProfileImage": "",
+      "role": "admin"
+    },
+    {
+      "name": "paranjay",
+      "id": "eac0b2e7-7289-40db-9723-8039a819747c",
+      "email": "pradeep@gmail.com",
+      "phone": "9876543210",
+      "password": "Pradeep123@",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689327109/ce3c25fwvaffegjiig5x.jpg",
+      "role": "user",
+      "bmi": 23
+    },
+    {
+      "name": "Subham",
+      "id": "bd8d77a5-b5b3-4025-b784-593391708f6b",
+      "email": "shubham@gmail.com",
+      "phone": "6232725216",
+      "password": "Shukla@1234",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688387232/oy1khfzvygwrkerzrih7.jpg",
+      "role": "user"
+    },
+    {
+      "name": "AMIYA",
+      "id": "9e50e3fe-9728-4630-9ceb-1a1e65646cf2",
+      "email": "amiya@gmail.com",
+      "phone": "9723973228",
+      "password": "Shukla@1234",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688386323/edtaxtbxnaxc2ltnqdi6.jpg",
+      "role": "user"
+    },
+    {
+      "name": "shukla",
+      "id": "07853dab-07cf-4d7e-88af-16ebd36516ed",
+      "email": "shukla@gmail.com",
+      "phone": "9876543210",
+      "password": "Shukla@1234",
+      "ProfileImage": "",
+      "role": "user"
+    },
+    {
+      "name": "Akash",
+      "id": "955e4af9-2459-43dd-b7e3-f5487dbfab84",
+      "email": "abc@gmail.com",
+      "phone": "6232725216",
+      "password": "Abcde@12345",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688388119/ikqtzzdpbr2euzp3jdg9.jpg",
+      "role": "user"
+    },
+    {
+      "name": "rajat",
+      "id": "5037fa97-d8e7-49a2-9fe7-a3dfc3c628eb",
+      "email": "rajat@gmail.com",
+      "phone": "987654321",
+      "password": "Rajat@123",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688387513/l2fv2ta0shubtuuaangt.jpg",
+      "role": "user"
+    },
+    {
+      "name": "rajendra",
+      "id": "75d6baa1-9a33-4160-878e-5a57d53b881f",
+      "email": "rajendra@gmail.com",
+      "phone": "1234567890",
+      "password": "Rajendra@1234",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688388069/dgbihhtnwfxwqqmqdmdy.jpg",
+      "role": "user"
+    },
+    {
+      "name": "Narayan",
+      "id": "fb432f3e-a099-4a09-9452-02a2511e8fa5",
+      "email": "typicwwode123@gmail.com",
+      "phone": 1234567891,
+      "password": "Nik@12345",
+      "role": "user"
+    },
+    {
+      "name": "sumit kumar",
+      "id": "42984ea9-bb4c-4df7-a7d5-1d3577b231b1",
+      "email": "test2@gmail.com",
+      "phone": 1234567801,
+      "password": "Test@123",
+      "role": "user"
+    },
+    {
+      "name": "Narayan",
+      "id": "b72416ee-24f8-4ef5-b2e4-31dd31bb3a60",
+      "email": "fddfgdgfd@gmail.com",
+      "phone": 5454545454,
+      "password": "adfdD@1234",
+      "role": "user"
+    },
+    {
+      "name": "Akash",
+      "email": "ddfgdfffgd@gmail.com",
+      "phone": 6232725216,
+      "password": "Asdfghj@1234456",
+      "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689332240/fue6neitoiz2dgogtgbs.jpg",
+      "role": "user",
+      "id": "rK_YpPY"
+    }
+  ],
+  "meals": [
+    {
+      "id": 0,
+      "username": "Pradeep",
+      "userid": "eac0b2e7-7289-40db-9723-8039a819747c",
+      "meals": [
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-Idli",
+          "recipe": "adadad",
+          "start": "2023-06-17",
+          "end": "2023-06-18",
+          "time": 1686640840183,
+          "food": "Idli",
+          "color": "blue",
+          "id": 11
+        },
+        {
+          "meal": "Lunch",
+          "title": "Lunch-Sandwich",
+          "recipe": "adadad",
+          "start": "2023-06-17",
+          "end": "2023-06-18",
+          "time": 1686640854566,
+          "food": "Sandwich",
+          "color": "green",
+          "id": 12
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-poha",
+          "recipe": "adadad",
+          "start": "2023-06-18",
+          "end": "2023-06-19",
+          "time": 1686640866238,
+          "food": "poha",
+          "color": "blue",
+          "id": 13
+        },
+        {
+          "meal": "Lunch",
+          "title": "Lunch-shake",
+          "recipe": "adada",
+          "start": "2023-06-18",
+          "end": "2023-06-19",
+          "time": 1686640877014,
+          "food": "shake",
+          "color": "green",
+          "id": 14
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-egg",
+          "recipe": "adadad",
+          "start": "2023-06-19",
+          "end": "2023-06-20",
+          "time": 1686640883581,
+          "food": "egg",
+          "color": "blue",
+          "id": 15
+        },
+        {
+          "meal": "Dinner",
+          "title": "Dinner-zazxc",
+          "recipe": "zczc",
+          "start": "2023-07-02",
+          "end": "2023-07-03",
+          "time": 1688100062620,
+          "food": "zazxc",
+          "color": "red",
+          "id": 29
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-dosa",
+          "recipe": "ada",
+          "start": "2023-07-04",
+          "end": "2023-07-05",
+          "time": 1688372837333,
+          "food": "dosa",
+          "color": "blue",
+          "id": 30
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-fry idli",
+          "recipe": "ada",
+          "start": "2023-07-18",
+          "end": "2023-07-19",
+          "time": 1688372865027,
+          "food": "fry idli",
+          "color": "blue",
+          "id": 33,
+          "iatethis": true
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-dal chawal",
+          "recipe": "adad",
+          "start": "2023-07-12",
+          "end": "2023-07-13",
+          "time": 1688733119702,
+          "food": "dal chawal",
+          "color": "blue",
+          "iatethis": "atedish"
+        },
+        {
+          "meal": "Dinner",
+          "title": "Dinner-cutlets",
+          "recipe": "adadad",
+          "start": "2023-07-13",
+          "end": "2023-07-14",
+          "time": 1688733133040,
+          "food": "cutlets",
+          "color": "red"
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-poha",
+          "recipe": "adad",
+          "start": "2023-07-14",
+          "end": "2023-07-15",
+          "time": 1688733144895,
+          "food": "poha",
+          "color": "blue"
+        },
+        {
+          "meal": "Lunch",
+          "title": "Lunch-fish",
+          "recipe": "adad",
+          "start": "2023-07-14",
+          "end": "2023-07-15",
+          "time": 1688733152569,
+          "food": "fish",
+          "color": "green"
+        },
+        {
+          "meal": "Dinner",
+          "title": "Dinner-Bhindi ki subji",
+          "recipe": "dadasdasdasd",
+          "start": "2023-07-14",
+          "end": "2023-07-15",
+          "time": 1688733172969,
+          "food": "Bhindi ki subji",
+          "color": "red"
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-roti",
+          "recipe": "sasd",
+          "start": "2023-07-15",
+          "end": "2023-07-16",
+          "time": 1688733276139,
+          "food": "roti",
+          "color": "blue"
+        },
+        {
+          "meal": "Lunch",
+          "title": "Lunch-dahi chawal",
+          "recipe": "adad",
+          "start": "2023-07-17",
+          "end": "2023-07-18",
+          "time": 1688733286218,
+          "food": "dahi chawal",
+          "color": "green"
+        },
+        {
+          "meal": "Lunch",
+          "title": "Lunch-Jalebi fafda",
+          "recipe": "adadad",
+          "start": "2023-07-19",
+          "end": "2023-07-20",
+          "time": 1688733299973,
+          "food": "Jalebi fafda",
+          "color": "green"
+        },
+        {
+          "meal": "Dinner",
+          "title": "Dinner-Raita",
+          "recipe": "adadada",
+          "start": "2023-07-20",
+          "end": "2023-07-21",
+          "time": 1688733312458,
+          "food": "Raita",
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "username": "sumit kumar",
+      "userid": "42984ea9-bb4c-4df7-a7d5-1d3577b231b1",
+      "meals": [
+        {
+          "meal": "Lunch",
+          "title": "Lunch-aalu",
+          "recipe": "adatr",
+          "start": "2023-07-08",
+          "end": "2023-07-09",
+          "time": 1688618094062,
+          "food": "aalu",
+          "color": "green",
+          "calories":145,
+          "fat":"8",
+          "protien":"20gm",
+          "carbs":"10"
+         
+        }
+      ]
+    },
+    {
+      "userid": "fb432f3e-a099-4a09-9452-02a2511e8fa5",
+      "username": "Narayan",
+      "meals": [
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-ladoo",
+          "recipe": "adasda",
+          "start": "2023-07-07",
+          "end": "2023-07-08",
+          "time": 1688620417138,
+          "food": "ladoo",
+          "color": "blue"
+        },
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-rice",
+          "recipe": "adada",
+          "start": "2023-07-08",
+          "end": "2023-07-09",
+          "time": 1688620461361,
+          "food": "rice",
+          "color": "blue"
+        },
+        {
+          "meal": "Dinner",
+          "title": "Dinner-chhole tikki ",
+          "recipe": "4 bje beak ke baad",
+          "start": "2023-07-16",
+          "end": "2023-07-17",
+          "time": 1688635727453,
+          "food": "chhole tikki ",
+          "color": "red"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "userid": "75d6baa1-9a33-4160-878e-5a57d53b881f",
+      "username": "rajendra",
+      "meals": [],
+      "id": 3
+    },
+    {
+      "userid": "51470bd6-6775-4228-936d-189d8b9e99ae",
+      "username": "new account",
+      "meals": [
+        {
+          "meal": "Lunch",
+          "title": "Lunch-chhole tikki 2 plate",
+          "recipe": "4 bje ke break ke baad",
+          "start": "2023-07-16",
+          "end": "2023-07-17",
+          "time": 1688635829920,
+          "food": "chhole tikki 2 plate",
+          "color": "green"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "userid": "9e50e3fe-9728-4630-9ceb-1a1e65646cf2",
+      "username": "AMIYA",
+      "meals": [
+        {
+          "meal": "Breakfast",
+          "title": "Breakfast-ddfgd",
+          "recipe": "fgfg",
+          "start": "2023-07-20",
+          "end": "2023-07-21",
+          "time": 1689065855551,
+          "food": "ddfgd",
+          "color": "blue"
+        }
+      ],
+      "id": 5
+    }
+  ],
+  "Food": [
+    {
+      "id": 11,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498032/oud4ea5arnlqxypeisjb.jpg",
+      "title": "Cake",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "180",
+      "numCal": "180",
+      "mealCatogary": "Veg",
+      "like": 0,
+      "dislike": 1,
+      "icon": "vegIcon",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "½ cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 ½ cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 ¾ teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "½ cup milk"
+        }
+      ],
+      "disLike": 1
+    },
+    {
+      "id": 10,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "title": "egg omlette",
+      "description": "Rice  is a type of cereal and food. In origin, it is a swamp grass. It is eaten as staple food in many parts of Asia. It is grown in warm parts of the world, mainly Asia,",
+      "calories": " 145",
+      "numCal": "145",
+      "mealCatogary": "Nonveg",
+      "like": 0,
+      "dislike": 0,
+      "icon": "NonvegIcon",
+      "keyword": [
+        "Egg"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "½ cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 ½ cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 ¾ teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "½ cup milk"
+        }
+      ],
+      "caloriesdes": "100"
+    },
+    {
+      "id": 8,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498298/jglwpefyjrumweov5wel.jpg",
+      "title": "Jeera Rice",
+      "description": "Rice  is a type of cereal and food. In origin, it is a swamp grass. It is eaten as staple food in many parts of Asia. It is grown in warm parts of the world, mainly Asia,",
+      "calories": " 145",
+      "numCal": "145",
+      "mealCatogary": "Veg",
+      "like": 0,
+      "dislike": 0,
+      "icon": "vegIcon",
+      "keyword": [
+        "Jeera",
+        "Rice"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Get a Pan and watch youtube"
+        },
+        {
+          "order": 3,
+          "step": "search how to make rice"
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white Rice"
+        },
+        {
+          "order": 2,
+          "title": "½ cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "Vegitables"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons chilli"
+        },
+        {
+          "order": 5,
+          "title": "1 ½ cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 ¾ teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "½ cup oil"
+        }
+      ],
+      "caloriesdes": "100"
+    },
+    {
+      "id": 6,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687501215/bqys2lqgjuhbtw0unbd2.jpg",
+      "title": "fries",
+      "description": "burger is a class of Indian Chinese dish made by roughly chopping and deep-frying ingredients such as chicken, cauliflower (gobi), prawns, fish, mutton, and paneer, and then sautéeing them in a sauce flavored with soy sauce.",
+      "calories": "210",
+      "mealCatogary": "Veg",
+      "icon": "NonvegIcon",
+      "like": 0,
+      "dislike": 0,
+      "keyword": [],
+      "Steps": [
+        {
+          "step": "peel the potato",
+          "order": 1
+        }
+      ],
+      "Ingredient": [
+        {
+          "title": "potato",
+          "order": 1
+        }
+      ],
+      "caloriesdes": "100"
+    },
+    {
+      "id": 5,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687501571/kzxjqzhkfjfwrjjxbd3v.jpg",
+      "title": "kebab",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": " 250",
+      "numCal": "250",
+      "mealCatogary": "Nonveg",
+      "icon": "NonvegIcon",
+      "like": 0,
+      "dislike": 0,
+      "keyword": [
+        "kebabe",
+        "roti"
+      ],
+      "Steps": [
+        {
+          "step": "Take a kebab",
+          "order": 1
+        }
+      ],
+      "Ingredient": [
+        {
+          "title": "Kebab",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687502319/dutnkzrv9sqivrja4iv9.jpg",
+      "title": "Rajma",
+      "description": "Rajma is large with dark red in colour and due to the unique shape of a kidney, they are also called kidney beans. They take a long time to cook and are usually used to cook soups as they have a firm texture and hold up well",
+      "calories": "200",
+      "numCal": "200",
+      "mealCatogary": "Veg",
+      "icon": "vegIcon",
+      "like": 0,
+      "dislike": 0,
+      "keyword": [
+        "rice",
+        "rajma"
+      ],
+      "Steps": [
+        {
+          "step": "Take a pan",
+          "order": 1
+        },
+        {
+          "step": "Boil water",
+          "order": 2
+        },
+        {
+          "step": "Chop potato",
+          "order": 3
+        }
+      ],
+      "Ingredient": [
+        {
+          "title": "Rajma",
+          "order": 1
+        },
+        {
+          "title": "Rice",
+          "order": 2
+        }
+      ],
+      "caloriesdes": "100"
+    },
+    {
+      "id": 3,
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687502429/dwgx3p6f7m2nirg7gtlz.jpg",
+      "title": "birayani",
+      "description": "Rajma is large with dark red in colour and due to the unique shape of a kidney, they are also called kidney beans. They take a long time to cook and are usually used to cook soups as they have a firm texture and hold up well",
+      "calories": "200",
+      "numCal": "200",
+      "mealCatogary": "Nonveg",
+      "icon": "NonvegIcon",
+      "like": 0,
+      "dislike": 0,
+      "keyword": [
+        "Chicken"
+      ],
+      "Steps": [
+        {
+          "step": "Take a pan",
+          "order": 1
+        },
+        {
+          "step": "Boil water",
+          "order": 2
+        },
+        {
+          "step": "Add rice",
+          "order": 3
+        }
+      ],
+      "Ingredient": [
+        {
+          "title": "Rice",
+          "order": 1
+        },
+        {
+          "title": "Chicken",
+          "order": 2
+        }
+      ],
+      "caloriesdes": "100"
+    },
+    {
+      "id": "0cb66f6e-b109-45b0-80e5-aeb0b527cc5f",
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687338078/epxthtste7q9nrotdb1x.jpg",
+      "title": "Pizza",
+      "description": "Pizza is italian dish made up of maida and baked in oven ",
+      "calories": "150",
+      "like": 0,
+      "dislike": 0,
+      "Steps": [
+        {
+          "step": "crush patato",
+          "order": 1
+        },
+        {
+          "step": "add chilli",
+          "order": 2
+        },
+        {
+          "step": "bake in oven",
+          "order": 3
+        },
+        {
+          "step": "enjoy!",
+          "order": 4
+        }
+      ],
+      "mealCatogary": "Veg",
+      "Ingredient": [
+        {
+          "title": "half kg paneer",
+          "order": 1
+        },
+        {
+          "title": "2 tp spoon chilli",
+          "order": 2
+        },
+        {
+          "title": "1 mashed potato test3",
+          "order": 3
+        }
+      ],
+      "keyword": [
+        "pizza"
+      ],
+      "caloriesdes": "100"
+    },
+    {
+      "id": "7b387e1a-b901-46cc-88e3-0e9d1f19a11e",
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688014977/ofm3fyxv7zazflyygszb.jpg",
+      "title": "Butter khichdi",
+      "description": "Butter khichdi is healthy",
+      "calories": "120",
+      "like": 0,
+      "dislike": 0,
+      "Steps": [
+        {
+          "step": "crush patato",
+          "order": 1
+        },
+        {
+          "step": "add chilli",
+          "order": 2
+        },
+        {
+          "step": "eat food",
+          "order": 3
+        }
+      ],
+      "mealCatogary": "Vegan",
+      "Ingredient": [
+        {
+          "title": "1 butter",
+          "order": 1
+        },
+        {
+          "title": "2 tp spoon chilli",
+          "order": 2
+        },
+        {
+          "title": "1 mashed potato",
+          "order": 3
+        }
+      ],
+      "caloriesdes": "100",
+      "keyword": []
+    },
+    {
+      "id": "7fe775d6-b1da-43e0-b83b-d7b1f6e55446",
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688028376/tackrunztxdlrr6yytzq.jpg",
+      "title": "Sabudana s",
+      "description": "sabudana khichidi is healthy ",
+      "calories": "120",
+      "Steps": [
+        {
+          "step": "soak sabudana first",
+          "order": 1
+        },
+        {
+          "step": "search rest on youtube",
+          "order": 2
+        }
+      ],
+      "mealCatogary": "Veg",
+      "Ingredient": [
+        {
+          "title": "1 butter",
+          "order": 1
+        },
+        {
+          "title": "half kg sabudana",
+          "order": 2
+        }
+      ],
+      "caloriesdes": "100",
+      "keyword": [],
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "id": "96edfc23-4ff2-47ef-99b5-bcd816eac003",
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688028799/bzkp4gv3w5kof8wds6v3.jpg",
+      "title": "Mutton s",
+      "description": "Mutton is healthy and good source of protien",
+      "calories": "210",
+      "Steps": [
+        {
+          "step": "cut mutton",
+          "order": 1
+        },
+        {
+          "step": "fry mutton",
+          "order": 2
+        },
+        {
+          "step": "Eat",
+          "order": 3
+        }
+      ],
+      "mealCatogary": "Nonveg",
+      "Ingredient": [
+        {
+          "title": "Mutton s",
+          "order": 1
+        },
+        {
+          "title": "2 tp spoon chilli",
+          "order": 2
+        }
+      ],
+      "caloriesdes": "100",
+      "keyword": [],
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "id": "d2cc76a2-e7e6-4650-adb0-780894ecfb5e",
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1688463788/ajnxsuczkgsyrvclvxbe.jpg",
+      "title": "Butter khichdi",
+      "description": "Butter khichdi is healthy",
+      "calories": 120,
+      "Steps": [
+        {
+          "step": "crush patato",
+          "order": 1
+        }
+      ],
+      "mealCatogary": "Veg",
+      "Ingredient": [
+        {
+          "title": "1 butter",
+          "order": 1
+        }
+      ],
+      "caloriesdes": 100,
+      "keyword": [],
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "id": "b9496fa5-0913-433c-9023-0a8d76224235",
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689056874/uxcz49ureqifcjkk6rsu.svg",
+      "title": "Aalo Paratha",
+      "description": "Aalo Paratha is a famous Indian Dish in Which we have stuffed Potato and very rich in fats ",
+      "calories": 250,
+      "Steps": [
+        {
+          "step": "Take Potatos boil them for 2 mins",
+          "order": 1
+        },
+        {
+          "step": "crush them",
+          "order": 2
+        },
+        {
+          "step": "stuff in flour like chapati ",
+          "order": 3
+        },
+        {
+          "step": "cook on medium falme",
+          "order": 4
+        },
+        {
+          "step": "Serve with sev or curd",
+          "order": 5
+        }
+      ],
+      "mealCatogary": "Veg",
+      "Ingredient": [
+        {
+          "title": "2 Potataos",
+          "order": 1
+        },
+        {
+          "title": "4 cup wheat flour",
+          "order": 2
+        },
+        {
+          "title": "required ingrediants",
+          "order": 3
+        },
+        {
+          "title": "chopped onions",
+          "order": 4
+        },
+        {
+          "title": "chopped garlic",
+          "order": 5
+        },
+        {
+          "title": "tomato catchup",
+          "order": 6
+        },
+        {
+          "title": "green chtney",
+          "order": 7
+        },
+        {
+          "title": "sev or curd",
+          "order": 8
+        }
+      ],
+      "caloriesdes": "",
+      "keyword": [
+        "Potatao",
+        "aaloo_paratha"
+      ],
+      "like": 0,
+      "dislike": 0
+    },
+    {
+      "sno": "1",
+      "title": "Cake1",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "180",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 12
+    },
+    {
+      "sno": "2",
+      "title": "Cake2",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 13
+    },
+    {
+      "sno": "3",
+      "title": "Cake3",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 14
+    },
+    {
+      "sno": "4",
+      "title": "Cake4",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 15
+    },
+    {
+      "sno": "5",
+      "title": "Cake5",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 16
+    },
+    {
+      "sno": "6",
+      "title": "Cake6",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 17
+    },
+    {
+      "sno": "7",
+      "title": "Cake7",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 18
+    },
+    {
+      "sno": "8",
+      "title": "Cake8",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 19
+    },
+    {
+      "sno": "9",
+      "title": "Cake9",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 20
+    },
+    {
+      "sno": "10",
+      "title": "Cake10",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 21
+    },
+    {
+      "sno": "11",
+      "title": "Cake11",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 22
+    },
+    {
+      "sno": "12",
+      "title": "Cake12",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 23
+    },
+    {
+      "sno": "13",
+      "title": "Cake13",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 24
+    },
+    {
+      "sno": "14",
+      "title": "Cake14",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 25
+    },
+    {
+      "sno": "15",
+      "title": "Cake15",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 26
+    },
+    {
+      "sno": "16",
+      "title": "Cake16",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 27
+    },
+    {
+      "sno": "17",
+      "title": "Cake17",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 28
+    },
+    {
+      "sno": "18",
+      "title": "Cake18",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 29
+    },
+    {
+      "sno": "19",
+      "title": "Cake19",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 30
+    },
+    {
+      "sno": "20",
+      "title": "Cake20",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 31
+    },
+    {
+      "sno": "21",
+      "title": "Cake21",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 32
+    },
+    {
+      "sno": "22",
+      "title": "Cake22",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 33
+    },
+    {
+      "sno": "23",
+      "title": "Cake23",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 34
+    },
+    {
+      "sno": "24",
+      "title": "Cake24",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 35
+    },
+    {
+      "sno": "25",
+      "title": "Cake25",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 36
+    },
+    {
+      "sno": "26",
+      "title": "Cake26",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 37
+    },
+    {
+      "sno": "27",
+      "title": "Cake27",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 38
+    },
+    {
+      "sno": "28",
+      "title": "Cake28",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 39
+    },
+    {
+      "sno": "29",
+      "title": "Cake29",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 40
+    },
+    {
+      "sno": "30",
+      "title": "Cake30",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 41
+    },
+    {
+      "sno": "31",
+      "title": "Cake31",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 42
+    },
+    {
+      "sno": "32",
+      "title": "Cake32",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 43
+    },
+    {
+      "sno": "33",
+      "title": "Cake33",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 44
+    },
+    {
+      "sno": "34",
+      "title": "Cake34",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 45
+    },
+    {
+      "sno": "35",
+      "title": "Cake35",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 46
+    },
+    {
+      "sno": "36",
+      "title": "Cake36",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 47
+    },
+    {
+      "sno": "37",
+      "title": "Cake37",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 48
+    },
+    {
+      "sno": "38",
+      "title": "Cake38",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 49
+    },
+    {
+      "sno": "39",
+      "title": "Cake39",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 50
+    },
+    {
+      "sno": "40",
+      "title": "Cake40",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 51
+    },
+    {
+      "sno": "41",
+      "title": "Cake41",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 52
+    },
+    {
+      "sno": "42",
+      "title": "Cake42",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 53
+    },
+    {
+      "sno": "45",
+      "title": "Cake45",
+      "description": "a sweet baked food made from a dough or thick batter usually containing flour and sugar and often shortening, eggs, and a raising agent (such as baking powder) : a flattened usually round mass of food that is baked or fried",
+      "calories": "",
+      "mealCatogary": "Veg",
+      "icon": "",
+      "keyword": [
+        "cake"
+      ],
+      "Steps": [
+        {
+          "order": 1,
+          "step": "Gather all ingredients."
+        },
+        {
+          "order": 2,
+          "step": "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square cake pan."
+        },
+        {
+          "order": 3,
+          "step": "Cream sugar and butter together in a mixing bowl. Add eggs, one at a time, beating briefly after each addition. Mix in vanilla."
+        },
+        {
+          "order": 4,
+          "step": "Combine flour and baking powder in a separate bowl. Add to the wet ingredients and mix well. Add milk and stir until smooth."
+        },
+        {
+          "order": 5,
+          "step": "Pour batter into the prepared cake pan."
+        },
+        {
+          "order": 6,
+          "step": "Bake in the preheated oven until the top springs back when lightly touched, 30 to 40 minutes."
+        },
+        {
+          "order": 7,
+          "step": "Remove from the oven and cool completely."
+        },
+        {
+          "order": 8,
+          "step": "Enjoy!"
+        }
+      ],
+      "Ingredient": [
+        {
+          "order": 1,
+          "title": "1 cup white sugar"
+        },
+        {
+          "order": 2,
+          "title": "� cup unsalted butter"
+        },
+        {
+          "order": 3,
+          "title": "2 large eggs"
+        },
+        {
+          "order": 4,
+          "title": "2 teaspoons vanilla extract"
+        },
+        {
+          "order": 5,
+          "title": "1 � cups all-purpose flour"
+        },
+        {
+          "order": 6,
+          "title": "1 � teaspoons baking powder"
+        },
+        {
+          "order": 7,
+          "title": "� cup milk"
+        }
+      ],
+      "img": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687498119/mhixete1v4hdc5ltmxad.jpg",
+      "id": 56
+    }
+  ],
+  "Ingredient": [
+    {
+      "ingrid": "Egg"
+    },
+    {
+      "ingrid": "Paneer"
+    },
+    {
+      "ingrid": "Potato"
+    },
+    {
+      "ingrid": "Rice"
+    },
+    {
+      "ingrid": "Chicken"
+    },
+    {
+      "ingrid": "Paties"
+    }
+  ],
+  "layout": [
+    {
+      "id": 1,
+      "module": "Login",
+      "styles": {
+        "bgColor": "#000000",
+        "TextColor": "#000000",
+        "ButtonColor": "#755dcb"
+      }
+    },
+    {
+      "id": 2,
+      "module": "Signup",
+      "styles": {
+        "bgColor": "#0087db",
+        "TextColor": "#40dd43",
+        "ButtonColor": "#6a6383"
+      }
+    },
+    {
+      "id": 3,
+      "module": "Footer",
+      "styles": {
+        "bgColor": "#ffdd00",
+        "TextColor": "#000000"
+      }
+    },
+    {
+      "id": 4,
+      "module": "Alert",
+      "styles": {
+        "bgColor": "#00ffd5",
+        "TextColor": "#3e3cc8",
+        "ButtonColor": "#755dcb"
+      }
+    },
+    {
+      "id": 5,
+      "module": "Navheader",
+      "styles": {
+        "bgColor": "#ffdd00",
+        "TextColor": "#000000",
+        "ButtonColor": "#755dcb"
+      }
+    },
+    {
+      "id": 6,
+      "module": "Chatbot",
+      "styles": {
+        "bgColor": "#ff6600",
+        "TextColor": "#2bff00"
+      }
+    },
+    {
+      "id": 7,
+      "module": "Table",
+      "styles": {
+        "bgColor": "#357d2b",
+        "TextColor": "#2bff00"
+      }
+    },
+    {
+      "id": 8,
+      "module": "AllRecipe",
+      "styles": {
+        "bgColor": "#357d2b",
+        "TextColor": "#2bff00"
+      }
+    },
+    {
+      "id": 9,
+      "module": "AllButtons",
+      "styles": {
+        "bgColor": "#367263",
+        "TextColor": "#63f047"
+      }
+    }
+  ],
+  "Products": [
+    {
+      "title": "cake",
+      "id": "b44e540c-82ea-4691-aab9-3738975cb918",
+      "description": "cake ",
+      "total_quantity": 192,
+      "price": 10000,
+      "currency": "INR",
+      "created_date": 1689059693525,
+      "expiry_date": 1886371,
+      "category": "Veg",
+      "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689343041/wjgpmlsdl6a4tgk3lvcr.png",
+      "created": 1689059693525,
+      "expiry": 1886371
+    },
+    {
+      "title": "bread",
+      "id": "d1e7c21d-8eb2-4e50-be4a-14a384fc9ade",
+      "description": "bread",
+      "total_quantity": 468,
+      "price": 200,
+      "currency": "INR",
+      "created_date": 1689059786550,
+      "expiry_date": 293934686,
+      "category": "Veg",
+      "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689338456/d5urbfz7igltevybgat0.jpg",
+      "created": 1689059786550,
+      "expiry": 293934686
+    },
+    {
+      "title": "cake",
+      "id": "74479000-2ef3-4add-aeec-76aec3b6bc61",
+      "description": "dfasd",
+      "total_quantity": 91,
+      "price": 2480,
+      "currency": "INR",
+      "created_date": 1689070404099,
+      "expiry_date": "2023-07-27",
+      "category": "Veg",
+      "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689328578/dsrblk3hesgcodgqowor.jpg",
+      "created": 1689070404099,
+      "expiry": "2023-07-27"
+    },
+    {
+      "title": "samosa",
+      "id": "afa000d2-9ee4-4fe4-b6f1-bb289f76bb0a",
+      "description": "samosa",
+      "total_quantity": 95,
+      "price": 100,
+      "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689338612/xwxm8etrpfm2vsfp9eq6.jpg",
+      "currency": "INR",
+      "created_date": 1689074304041,
+      "expiry_date": "2023-07-29",
+      "category": "Veg",
+      "totalquantity": 100,
+      "created": 1689074304041,
+      "expiry": "2023-07-29"
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "userId": "eac0b2e7-7289-40db-9723-8039a819747c",
+      "amount": 5000,
+      "items": [
+        {
+          "id": "b44e540c-82ea-4691-aab9-3738975cb918",
+          "dateof_purchase": 1689338658738,
+          "price": 10000,
+          "currency": "INR",
+          "title": "cake",
+          "quantity": 10,
+          "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689328595/c65ycqutrg6oihnxerio.jpg"
+        },
+        {
+          "id": "74479000-2ef3-4add-aeec-76aec3b6bc61",
+          "dateof_purchase": 1689338662335,
+          "price": 2480,
+          "currency": "INR",
+          "title": "cake",
+          "quantity": 10,
+          "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689328578/dsrblk3hesgcodgqowor.jpg"
+        },
+        {
+          "id": "afa000d2-9ee4-4fe4-b6f1-bb289f76bb0a",
+          "dateof_purchase": 1689339678076,
+          "price": 100,
+          "currency": "INR",
+          "title": "samosa",
+          "quantity": 1,
+          "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689074300/y6tmm9cknwzzhv37w0mi.jpg"
+        }
+      ],
+      "status": "success",
+      "name": "paranjay",
+      "id": 1
+    },
+    {
+      "userId": "bd8d77a5-b5b3-4025-b784-593391708f6b",
+      "amount": 1000,
+      "items": [
+        {
+          "id": "74479000-2ef3-4add-aeec-76aec3b6bc61",
+          "dateof_purchase": 1689569040856,
+          "price": 2480,
+          "currency": "INR",
+          "title": "cake",
+          "quantity": 2,
+          "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689328578/dsrblk3hesgcodgqowor.jpg"
+        },
+        {
+          "id": "afa000d2-9ee4-4fe4-b6f1-bb289f76bb0a",
+          "dateof_purchase": 1689569042773,
+          "price": 100,
+          "currency": "INR",
+          "title": "samosa",
+          "quantity": 2,
+          "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689074300/y6tmm9cknwzzhv37w0mi.jpg"
+        }
+      ],
+      "status": "success",
+      "name": "Subham",
+      "id": 2
+    },
+    {
+      "userId": "955e4af9-2459-43dd-b7e3-f5487dbfab84",
+      "items": [
+        {
+          "id": "afa000d2-9ee4-4fe4-b6f1-bb289f76bb0a",
+          "dateof_purchase": 1689601535787,
+          "price": 100,
+          "currency": "INR",
+          "title": "samosa",
+          "quantity": 1,
+          "image": "http://res.cloudinary.com/dn1sojao8/image/upload/v1689338612/xwxm8etrpfm2vsfp9eq6.jpg"
+        }
+      ],
+      "status": "success",
+      "name": "Akash",
+      "amount": 100,
+      "id": 3
+    }
+  ]
+}

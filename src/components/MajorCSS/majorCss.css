@@ -1,0 +1,160 @@
+.form_Data_Container {
+    background: #4F46E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+
+.secound_Container_Form {
+    font-family: inter;
+    border: 1px solid white;
+    border-radius: 20px;
+    background: #FFFFFF;
+    padding: 25px 20px;
+
+
+}
+
+.Heading_Text_all {
+    text-transform: capitalize;
+    font-family: Pacifico;
+    font-size: 40px;
+    font-weight: 400;
+    padding: 18px;
+    color: #4F46E5;
+    display: flex;
+    justify-content: center;
+}
+
+
+.font_Headline_Welcome {
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 32px;
+    opacity: 0.78;
+}
+
+.all_Lable_In_Components {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    font-family: Inter;
+    padding-left: 10px;
+    color: black;
+
+}
+
+.Long_Buttons_Forms {
+    font-family: Inter;
+    padding: 10px;
+    background-color: #4F46E5;
+    width: 100%;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+.all_Buttons_in_Page {
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    text-transform: capitalize;
+ 
+}
+
+.btn-secondary {
+    background-color: #fff;
+    border: 1px solid #4f46e5;
+    color: #4F46E5;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 10px;
+    text-transform: capitalize;
+}
+
+.menu_Navbar {
+    font-family: Inter;
+    cursor: pointer;
+    color: white;
+    padding-right: 20px;
+    font-size: 18px;
+}
+.Typography_Heading{
+    text-transform: capitalize;
+    line-height: 40px;
+    
+  
+}
+.all_Descriptions{
+
+    padding-right: 45px;
+    line-height: 25px;
+    font-size: Inter;
+    font-size: 18px;
+    text-transform: capitalize;
+  
+}
+.home_BackGround_Color {
+    background-color: #e2e1e1;
+    height: 100%;
+    width: 100%;
+}
+
+.Icons_in-Page{
+    font-size: 40px;
+    padding-right: 10px;
+    color: #4F46E5;
+    cursor: pointer;
+    
+}
+.RecipeSuggetionBg {
+    background-color: rgba(207, 205, 205, 0.574);
+    padding:20px 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+    .secound_Container_Form {
+        padding: 0px;
+    }
+
+    .Heading_Text_all {
+        font-size: 30px;
+        font-weight: 400;
+        padding: 10px;
+        color: #4F46E5;
+        display: flex;
+        justify-content: center;
+    }
+
+    .font_Headline_Welcome {
+        font-weight: 600;
+        font-size: 25px;
+    }
+
+    .all_Lable_In_Components {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: Inter;
+    }
+
+    .Long_Buttons_Forms {
+
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #4F46E5;
+        width: 100%;
+    }
+
+}

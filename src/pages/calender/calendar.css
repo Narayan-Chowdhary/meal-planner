@@ -1,0 +1,51 @@
+.calnder {
+    font-family: "Inter" !important;
+    font-weight: 300 !important;
+    font-size: 15px !important;
+}
+
+.rbc-toolbar {
+    font-size: 30px !important;
+    padding: 10px 0px;
+    color: #4F46E5 !important;
+}
+
+
+.rbc-day-bg {
+
+    font-family: "Inter" !important;
+    font-weight: 300 !important;
+    font-size: 15px !important;
+}
+
+.rbc-header {
+    font-size: 115%;
+}
+
+.rbc-toolbar button {
+    margin:0px 5px ;
+    padding: 1rem 1rem;
+    color:#4F46E5 !important;
+    background-color:white !important;
+
+    font-family: "Inter" !important;
+    border-radius: 6px !important;
+   
+    text-Transform: none !important;
+    font-weight: 600 !important;
+}
+
+.rbc-event,.rbc-day-slot .rbc-background-event{
+
+font-family: "Inter" !important;
+}
+.rbc-today{
+    background-color: #bae6fd;
+    
+}
+
+
+
+.rbc-off-range-bg{
+    background-color: #efe8e8!important;
+}
