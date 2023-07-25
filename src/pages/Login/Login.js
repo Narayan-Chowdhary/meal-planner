@@ -283,11 +283,11 @@ export default function Login() {
                       <div>
                         <h2>User</h2>
                         <h4>test2@gmail.com</h4>
-                        <h4>Test@123</h4>
+                        <h4>Test@12345</h4>
                       </div>
                       <div>
                         <h2>Admin</h2>
-                        <h4>narayan.chowdhary@hiteshi.com</h4>
+                        <h4>narayan@gmail.com</h4>
                         <h4>Narayan@123</h4>
                       </div>
                       </div>
