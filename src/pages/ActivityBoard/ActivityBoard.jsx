@@ -5,7 +5,7 @@ import AddTask from "./AddTask";
 import KanbanCard from "./KanbanCard";
 
 import React, { useState } from "react";
-import { taskData } from "./task";
+import { taskData } from "./taskdata";
 //Icons
 
 
