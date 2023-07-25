@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "6268a76a-56e2-4930-9d4a-67aa97bcd349",
-      "email": "narayan.chowdhary@hiteshi.com",
+      "email": "narayan@gmail.com",
       "password": "Narayan@123",
       "ProfileImage": "http://res.cloudinary.com/dn1sojao8/image/upload/v1687520113/b0o0j1pu9myynfaqpzvl.jpg",
       "name": "Narayan chowdhary",
@@ -96,7 +96,7 @@
       "id": "42984ea9-bb4c-4df7-a7d5-1d3577b231b1",
       "email": "test2@gmail.com",
       "phone": 1234567801,
-      "password": "Test@123",
+      "password": "Test@12345",
       "role": "user"
     },
     {
