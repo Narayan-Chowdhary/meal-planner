@@ -1,0 +1,6 @@
+# Included in every location that sets its own add_header, because nginx
+# drops inherited add_header directives as soon as a location defines one.
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;

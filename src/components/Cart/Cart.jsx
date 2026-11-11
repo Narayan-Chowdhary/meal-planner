@@ -1,10 +1,6 @@
- import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 //config
-import {
-  base_url,
-  getProductAPIEndpoint,
-  getCartAPIEndpoint,
-} from "../../config";
+import { base_url, getProductAPIEndpoint, getCartAPIEndpoint, firebaseDatabaseURL, razorpayKeyId } from "../../config";
 //
 
 import Badge from "@mui/material/Badge";
@@ -30,7 +26,7 @@ import {
 } from "@mui/material";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Navigate } from "react-router";
 import AddIcon from "@mui/icons-material/Add";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -255,7 +251,7 @@ const [isActive,setActive]=useState(false)
     setUserdata(idofuser);
 
     const responsefromcart = await fetch(
-      `http://localhost:8000/orders?userId=${idofuser.id}`
+      `${base_url}orders?userId=${idofuser.id}`
     );
     let foundDat = await responsefromcart.json();
     console.log(foundDat, "1111111");
@@ -265,7 +261,7 @@ const [isActive,setActive]=useState(false)
       cartdata.name = idofuser.name;
       cartdata.amount=amt
       const response = await fetch(
-        `http://localhost:8000/orders/${foundDat[0].id}`,
+        `${base_url}orders/${foundDat[0].id}`,
         {
           method: "PATCH",
           body: JSON.stringify(cartdata),
@@ -282,7 +278,7 @@ const [isActive,setActive]=useState(false)
       cartdata.status = "success";
       cartdata.name = idofuser.name;
        cartdata.amount = amt;
-      const postedData = await fetch(`http://localhost:8000/orders`, {
+      const postedData = await fetch(`${base_url}orders`, {
         method: "POST",
         body: JSON.stringify(cartdata),
         headers: {
@@ -295,7 +291,7 @@ const [isActive,setActive]=useState(false)
   };
 
   const deletefromcart = async (trid) => {
-    await fetch(`http://localhost:8000/cart/${productid}`, {
+    await fetch(`${base_url}cart/${productid}`, {
       method: "DELETE",
     });
     setAmt(0);
@@ -303,7 +299,7 @@ const [isActive,setActive]=useState(false)
     reduceItemsfromStore();
 console.log(trid, "transsection");
     await fetch(
-      "https://meal-planner-390411-default-rtdb.firebaseio.com/transection.json",
+      `${firebaseDatabaseURL}transection.json`,
       {
         method: "POST",
         body: JSON.stringify({ msg: `Your order (${trid}:id) is successful)` }),
@@ -316,7 +312,7 @@ setActive(true)
   };
 
   const options = {
-    key: "rzp_test_HJG5Rtuy8Xh2NB",
+    key: razorpayKeyId,
     amount: "100", //  = INR 1
     name: "Paranjay's shop",
     description: "some description",
@@ -487,7 +483,9 @@ setActive(true)
               </TableContainer>
               <Box>
                 <Grid container>
-                  <Grid items lg={9}>
+                  <Grid size={{
+                    lg: 9
+                  }}>
                     <Typography
                       variant="h5"
                       textAlign={"center"}
@@ -496,7 +494,9 @@ setActive(true)
                       Grand Total
                     </Typography>
                   </Grid>
-                  <Grid items lg={3}>
+                  <Grid size={{
+                    lg: 3
+                  }}>
                     <Typography
                       variant="h5"
                       textAlign={"start"}
@@ -543,6 +543,14 @@ setActive(true)
   );
 }
 
-export default Cart;
+// This page depends on router state passed via navigate(); when opened directly
+// (refresh / deep link) that state is missing, so redirect instead of crashing.
+function CartRoute() {
+  const location = useLocation();
+  if (location.state?.qttotal == null) return <Navigate to="/groceries" replace />;
+  return <Cart />;
+}
+
+export default CartRoute;
 //FAILED=pay_MCtkUWCVIpPedY;
 //SUCCESS=pay_MCtobdMbfqDr3t;

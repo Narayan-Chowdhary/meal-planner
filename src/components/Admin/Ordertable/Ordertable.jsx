@@ -1,58 +1,57 @@
-import { React, useEffect, useState } from "react";
-import MUIDataTable from "mui-datatables";
+import { useEffect, useState } from "react";
+import { Container, Paper, Typography } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
 import "./Ordertable.css";
-import { Container } from "@mui/material";
 
-//
 import { base_url, getOrderAPIEndpoint } from "../../../config";
+
+const columns = [
+  { field: "name", headerName: "Name", flex: 1, minWidth: 160 },
+  { field: "status", headerName: "Status", flex: 1, minWidth: 120 },
+  { field: "amount", headerName: "Total Amount", type: "number", flex: 1, minWidth: 120 },
+];
+
 function Ordertable() {
-  //variable declearations
-
-  let objectoforder = {};
-
-
-
-
-
-  const columns = [
-    {
-      name: "name",
-      label: "Name",
-    },
-    {
-      name: "status",
-      label: "Status",
-    },
-    {
-      name: "amount",
-      label: "Total Amount",
-    },
-  ];
-
   const [orderData, setOrderData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  //side effects
   useEffect(() => {
-    fetchData();
+    const controller = new AbortController();
+
+    (async () => {
+      try {
+        const response = await fetch(`${base_url}${getOrderAPIEndpoint}`, {
+          signal: controller.signal,
+        });
+        if (!response.ok) throw new Error(`Failed to load orders (${response.status})`);
+        setOrderData(await response.json());
+      } catch (error) {
+        if (error.name !== "AbortError") console.error(error);
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    })();
+
+    return () => controller.abort();
   }, []);
 
- 
-  // function body
-  const fetchData = async () => {
-    const responsefromorder = await fetch(`${base_url}${getOrderAPIEndpoint}`);
-    const finalorders = await responsefromorder.json();
-
-   
- setOrderData(finalorders);
-
-  };
- 
   return (
-    <>
-      <Container maxWidth={"xl"}>
-       <MUIDataTable title={"Order List"} data={orderData} columns={columns} />
-      </Container>
-    </>
+    <Container maxWidth="xl">
+      <Paper sx={{ p: 2 }}>
+        <Typography variant="h6" gutterBottom>
+          Order List
+        </Typography>
+        <DataGrid
+          rows={orderData}
+          columns={columns}
+          loading={loading}
+          autoHeight
+          pageSizeOptions={[10, 25, 50]}
+          initialState={{ pagination: { paginationModel: { pageSize: 10 } } }}
+          disableRowSelectionOnClick
+        />
+      </Paper>
+    </Container>
   );
 }
 

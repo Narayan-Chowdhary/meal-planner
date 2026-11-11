@@ -1,0 +1,19 @@
+# Keep the build context small and free of secrets
+node_modules
+build
+dist
+coverage
+.git
+.gitignore
+.vscode
+.idea
+.env
+.env.*
+!.env.example
+npm-debug.log*
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
+**/*.test.*
+**/.DS_Store

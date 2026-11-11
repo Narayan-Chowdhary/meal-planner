@@ -1,3 +1,4 @@
+import { firebaseDatabaseURL } from "../config";
 import { initializeApp } from "firebase/app";
 import {
   getDatabase,
@@ -10,7 +11,7 @@ import {
 } from "firebase/database";
 
 const firebaseConfig = {
-  databaseURL: "https://meal-planner-390411-default-rtdb.firebaseio.com/",
+  databaseURL: firebaseDatabaseURL,
 };
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);

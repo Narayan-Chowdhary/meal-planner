@@ -14,7 +14,7 @@
     z-index: 20;
   }
   .icon-style{
-    background-color: #4F46E5;
+    background-color: var(--mp-primary);
     border-radius: 50%;
     height: 40px;
     width: 40px;

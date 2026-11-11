@@ -4,7 +4,7 @@
     color:"white" !important;
 }
 .card_text {
-    font-family: "Inter";
+    font-family: var(--mp-font-body);
     font-size: "18px"; 
     overflow: hidden;
     display: -webkit-box;

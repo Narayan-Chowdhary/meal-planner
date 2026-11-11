@@ -1,25 +1,20 @@
-//API CALL
+// Thin wrapper around fetch for the json-server API.
 
-export default async function callApi({ url, method, data }) {
-  try {
-    let options = {
-      method: method,
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    if (data) {
-      options.data = JSON.stringify(data);
-    }
-    const response = await fetch(url, options);
-
-    if (!response.ok) {
-      throw new Error("API request failed");
-    }
-    const responseData = await response.json();
-    return responseData;
-  } catch (error) {
-    console.error("API call failed:", error);
-    throw error;
+export default async function callApi({ url, method = "GET", data, signal }) {
+  const options = {
+    method,
+    headers: { "Content-Type": "application/json" },
+    signal,
+  };
+  if (data !== undefined) {
+    options.body = JSON.stringify(data);
   }
+
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw new Error(`API request failed: ${method} ${url} -> ${response.status}`);
+  }
+  // DELETE responses may have an empty body
+  const text = await response.text();
+  return text ? JSON.parse(text) : null;
 }

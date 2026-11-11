@@ -1,0 +1,7 @@
+# Normalise line endings; container/config files must stay LF on every OS
+* text=auto
+Dockerfile text eol=lf
+*.conf text eol=lf
+*.inc text eol=lf
+*.yml text eol=lf
+*.sh text eol=lf

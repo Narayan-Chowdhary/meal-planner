@@ -103,7 +103,6 @@ const Task = ({ name = "Task Name", type = null, t, tasks, setTasks }) => {
               height: "100%",
               width: "5px",
               backgroundColor: label_color,
-              position: "absolute",
               left: 1,
               top: 0,
             }}

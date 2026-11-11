@@ -1,89 +1,69 @@
 import "./ActionOnProducts.css";
-import "react-datepicker/dist/react-datepicker.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 //config
-import {
-  base_url,
-  getUserAPIEndpoint,getProductAPIEndpoint,
-  cloudinaryUploadImage_url,
-} from "../../config";
-import {
-  Box,
-  Typography,
-  Button,
-  Grid,
-  Container,
-  TextField,
-  IconButton,
-  Input,
-  MenuItem,
-  FormControl,
-  Select,
-  FormHelperText,
-} from "@mui/material";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useTranslation, initReactI18next } from "react-i18next";
+import { base_url, getProductAPIEndpoint, cloudinaryUploadImage_url, firebaseDatabaseURL } from "../../config";
+import { Box, Button, Grid, TextField, MenuItem, InputAdornment } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-import DatePicker from "react-datepicker";
-
 import moment from "moment";
-import AlertComponent from "../ui/Alert/Alert";
-import DialogTitle from "@mui/material/DialogTitle";
-import Dialog from "@mui/material/Dialog";
 import { v4 as uuidv4 } from "uuid";
-import Avatar from "@mui/material/Avatar";
-import CloseIcon from "@mui/icons-material/Close";
-import EditIcon from "@mui/icons-material/Edit";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
-import vegIcon from "../../assests/veg-icon.png";
-import NonvegIcon from "../../assests/non-veg-icon.png";
-import VeganIcon from "../../assests/green-leaf-icon.png";
+import AddShoppingCartRoundedIcon from "@mui/icons-material/AddShoppingCartRounded";
+import EditNoteRoundedIcon from "@mui/icons-material/EditNoteRounded";
+import AlertComponent from "../ui/Alert/Alert";
+import FormDialog from "../common/FormDialog";
+import ImageUploadField from "../common/ImageUploadField";
 
+const FORM_ID = "admin-product-form";
 
+const DIET_COLORS = { Veg: "#2F855A", Nonveg: "#C53030", Vegan: "#2F6B4F" };
 
+/** Indian food-label style marker: coloured square with a dot (green veg, red non-veg, leaf-green vegan). */
+export function DietMarker({ category, size = 14 }) {
+  const color = DIET_COLORS[category] ?? DIET_COLORS.Veg;
+  return (
+    <Box
+      component="span"
+      aria-hidden
+      sx={{
+        width: size,
+        height: size,
+        flexShrink: 0,
+        display: "inline-grid",
+        placeItems: "center",
+        border: "1.5px solid",
+        borderColor: color,
+        borderRadius: "3px",
+        bgcolor: "#fff",
+        "&::after": {
+          content: '""',
+          width: size * 0.45,
+          height: size * 0.45,
+          borderRadius: category === "Vegan" ? "0 60% 0 60%" : "50%",
+          bgcolor: color,
+        },
+      }}
+    />
+  );
+}
 
+const CURRENCY_SYMBOL = { INR: "₹", DOLLAR: "$" };
 
 export default function ActionsOnProducts(props) {
   const { t } = useTranslation();
 
-  const lableStyling = {
-    fontSize: "16px",
-    fontWeight: "600",
-    lineHeight: "30px",
-    fontFamily: "Inter",
-    paddingLeft: "10px",
-    color: "black",
-  };
-
-  
   const openAdd = props.open;
   const setOpenAdd = props.setOpen;
   const updations = props.updations;
-  const setUpdation = props.setUpdation;
   const getProducts = props.sendData;
   const productDataApi = props.productDataApi;
-  const nav = useNavigate();
 
+  const ProductSchema = Yup.object().shape({
+    title: Yup.string().min(3, "Too Short!").max(20, "Too Long!").required("title is required"),
 
-
-  // const total_quantityRegExp =
-  //   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-
-  const ActionsOnProducts = Yup.object().shape({
-    title: Yup.string()
-      .min(3, "Too Short!")
-      .max(20, "Too Long!")
-      .required("title is required"),
-
-    description: Yup.string()
-      .min(5, "Too Short!")
-      .max(100, "Too Long!")
-      .required("description is required"),
+    description: Yup.string().min(5, "Too Short!").max(100, "Too Long!").required("description is required"),
 
     total_quantity: Yup.string()
-      // .matches(totalquantityRegExp, "Invalid Price number")
       .max(10000, "max lenght should be 5 digit")
       .min(1, "min lenght should be 1 digit")
       .required("Quantity is required"),
@@ -92,55 +72,22 @@ export default function ActionsOnProducts(props) {
       .max(8, "price must be 8 characters at maximum")
       .matches(/[0-9]/, "price requires a number")
       .required("price is required"),
-
-
-
   });
 
-  const [show, setShow] = useState(false);
-  const [showprice, setShowprice] = useState(false);
-  const [openExists, setOpenExists] = useState(false);
-  const [productsData, setProductsData] = useState([]);
+  const [, setProductsData] = useState([]);
   const [showAlert, setShowAlert] = useState(false);
   const [showAlert1, setShowAlert1] = useState(false);
 
-  const [newImage, setNewImage] = useState('');
+  const [newImage, setNewImage] = useState("");
+  const [previewImage, setPreviewImage] = useState(null); // edit-mode preview only
   const [openCircle, setCircleOpen] = useState(false);
   const [expiryDate, setExpiryDate] = useState(new Date());
 
-
-
-
-
-
-
-
-
-  const handleCloseCircle = () => {
-    setCircleOpen(false);
-  };
-  const handleOpen = () => {
-    setCircleOpen(true);
-  };
-  // const handleClickShowprice = () => {
-  //   setShow((show) => !show);
-  //   setShowprice(!showprice);
-  // };
-  // const handleExistsClose = (event, reason) => {
-  //   if (reason === "clickaway") {
-  //     return;
-  //   }
-  //   setOpenExists(false);
-  // };
-
   const handleClose = () => {
     setOpenAdd(false);
+    setPreviewImage(null);
+    setNewImage(""); // don't carry the last upload into the next product
   };
-
-  useEffect(() => {
-    getAllProducts();
-  }, []);
-  // let img;
 
   const getAllProducts = () => {
     fetch(`${base_url}${getProductAPIEndpoint}`)
@@ -150,33 +97,55 @@ export default function ActionsOnProducts(props) {
       });
   };
 
-  const ImageUpload = async (e) => {
-    const formData = new FormData();
-    formData.append("file", e.target.files[0]);
-    formData.append("upload_preset", "mealPlanner");
-
-    const responseImg = await fetch(
-      `${cloudinaryUploadImage_url}`,
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
-    const getImage = await responseImg.json();
-    let FinalImageKey = getImage.url;
-    console.log("sdf", FinalImageKey)
-    setNewImage(FinalImageKey);
-    setCircleOpen(false);
+  useEffect(() => {
     getAllProducts();
-  
+  }, []);
+
+  const uploadToCloudinary = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "mealPlanner");
+    const responseImg = await fetch(`${cloudinaryUploadImage_url}`, {
+      method: "POST",
+      body: formData,
+    });
+    const getImage = await responseImg.json();
+    return getImage.url;
   };
 
-  let id = uuidv4();
+  // Add mode: upload and keep the URL for the POST payload.
+  const ImageUpload = async (file) => {
+    try {
+      const FinalImageKey = await uploadToCloudinary(file);
+      setNewImage(FinalImageKey);
+    } finally {
+      setCircleOpen(false);
+    }
+    getAllProducts();
+  };
 
-  let a = 0;
+  // Edit mode: upload and PATCH the product's image straight away.
+  const dataChanged = async (file) => {
+    try {
+      const FinalImageKey = await uploadToCloudinary(file);
+      await fetch(`${base_url}${getProductAPIEndpoint}${getProducts.id}`, {
+        method: "PATCH",
+        mode: "cors",
+        body: JSON.stringify({ image: FinalImageKey }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      setPreviewImage(FinalImageKey);
+    } finally {
+      setCircleOpen(false);
+    }
+    getAllProducts();
+  };
+
   const submitData = async (values) => {
+    const id = uuidv4();
     if (updations == false) {
-
       const newProducsAdding = {
         title: values.title,
         id,
@@ -189,32 +158,29 @@ export default function ActionsOnProducts(props) {
         expiry_date: expiryDate,
         category: values.category,
       };
-     
-  const fireBase = {
-    title: values.title,
-    id,
-    description: values.description,
-    total_quantity: values.total_quantity,
-    price: values.price,
-    image: newImage,
-    currency: values.currency,
-    created_date: moment().toDate().getTime(),
-    expiry_date: expiryDate,
-    category: values.category,
-  };
-/// post data on firebase
-  await fetch(
-    "https://meal-planner-390411-default-rtdb.firebaseio.com/products.json",
-    {
-      method: "POST",
-      body: JSON.stringify(fireBase),
-      headers: {
-        "Content-Type": "application/json ; charset=utf-8",
-      },
-    }
-  );
 
-// post data on json server
+      const fireBase = {
+        title: values.title,
+        id,
+        description: values.description,
+        total_quantity: values.total_quantity,
+        price: values.price,
+        image: newImage,
+        currency: values.currency,
+        created_date: moment().toDate().getTime(),
+        expiry_date: expiryDate,
+        category: values.category,
+      };
+      // post data on firebase
+      await fetch(`${firebaseDatabaseURL}products.json`, {
+        method: "POST",
+        body: JSON.stringify(fireBase),
+        headers: {
+          "Content-Type": "application/json ; charset=utf-8",
+        },
+      });
+
+      // post data on json server
       await fetch(`${base_url}${getProductAPIEndpoint}`, {
         method: "POST",
         body: JSON.stringify(newProducsAdding),
@@ -222,9 +188,8 @@ export default function ActionsOnProducts(props) {
           "Content-Type": "application/json ; charset=utf-8",
         },
       });
-      setOpenAdd(false);
+      handleClose();
       productDataApi();
-    
     }
     if (updations == true) {
       await fetch(`${base_url}${getProductAPIEndpoint}${getProducts?.id}`, {
@@ -236,478 +201,188 @@ export default function ActionsOnProducts(props) {
         },
       });
 
-
       setShowAlert1(true);
-      setOpenAdd(false);
+      handleClose();
+      setPreviewImage(null);
       productDataApi();
-      
     }
   };
 
-  const dataChanged = async (e) => {
-    const formData = new FormData();
-    formData.append("file", e.target.files[0]);
-    formData.append("upload_preset", "mealPlanner");
-    const responseImg = await fetch(`${cloudinaryUploadImage_url}`, {
-      method: "POST",
-      body: formData,
-    });
-    const getImage = await responseImg.json();
-    let FinalImageKey = getImage.url;
-    
-    await fetch(`${base_url}${getProductAPIEndpoint}${getProducts.id}`, {
-      method: "PATCH",
-      mode: "cors",
-      body: JSON.stringify({ image: FinalImageKey }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-    setCircleOpen(false);
-    getAllProducts();
-  };
+  const fieldProps = (name, touched, errors) => ({
+    name,
+    error: Boolean(touched[name] && errors[name]),
+    helperText: touched[name] ? errors[name] : undefined,
+  });
+
+  // expiryDate is a Date until the admin picks one, then the input's "YYYY-MM-DD" string (stored as-is).
+  const expiryInputValue = expiryDate instanceof Date ? moment(expiryDate).format("YYYY-MM-DD") : expiryDate ?? "";
+
+  const categories = [
+    { value: "Veg", label: t("veg", "Veg") },
+    { value: "Nonveg", label: t("non_veg", "Non-Veg") },
+    { value: "Vegan", label: t("vegan", "Vegan") },
+  ];
 
   return (
     <Box>
-      <Dialog onClose={handleClose} open={openAdd} fullWidth>
-        <Box sx={{ color: "white", p: 1 }}>
-          <DialogTitle>
-            <Box sx={{ display: "flex", justifyContent: "end" }}>
-              <CloseIcon
-                onClick={handleClose}
-                sx={{ color: "black", cursor: "pointer" }}
-              />
-            </Box>
-            <Typography variant="h3" color="black" align="center">
-              {updations ? "Update Details" : `${t("Add New Product")}`}
-            </Typography>
-            <Box class="updatedPageCss">
-              <Formik
-                initialValues={
-                  updations
-                    ? {
-                        title: getProducts.title,
-                        total_quantity: getProducts.total_quantity,
-                        description: getProducts.description,
-                        currency: getProducts.currency,
-                        price: getProducts.price,
-                        created: getProducts.created_date,
-                        expiry: getProducts.expiry_date,
-                        category: getProducts.category,
-                        image: getProducts.image,
-                      }
-                    : {
-                        title: "",
-                        id: "",
-                        total_quantity: "",
-                        description: "",
-                        currency: "INR",
-                        price: "",
-                        created: moment().format("DD/MM/YYYY"),
-                        category: "Veg",
-                      }
+      <FormDialog
+        open={openAdd}
+        onClose={handleClose}
+        title={updations ? t("edit_product", "Edit product") : t("add_product", "Add product")}
+        subtitle={updations ? "Update this product's details." : "Add a new item to the store."}
+        icon={updations ? <EditNoteRoundedIcon /> : <AddShoppingCartRoundedIcon />}
+        actions={
+          <>
+            <Button color="inherit" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button variant="contained" type="submit" form={FORM_ID} disabled={openCircle}>
+              {updations ? "Save changes" : t("add_product", "Add product")}
+            </Button>
+          </>
+        }
+      >
+        <Formik
+          initialValues={
+            updations
+              ? {
+                  title: getProducts.title,
+                  total_quantity: getProducts.total_quantity,
+                  description: getProducts.description,
+                  currency: getProducts.currency,
+                  price: getProducts.price,
+                  created: getProducts.created_date,
+                  expiry: getProducts.expiry_date,
+                  category: getProducts.category,
+                  image: getProducts.image,
                 }
-                validationSchema={ActionsOnProducts}
-                validateOnChange={true}
-                validateOnBlur={false}
-                onSubmit={(values) => {
-                  submitData(values);
-                }}
-              >
-                {({ errors, values, handleChange, handleBlur, touched }) => (
-                  <Form>
-                    <Box>
-                      <Typography className="all_Lable_In_Components">
-                        {t("title")}
-                      </Typography>
-                      <TextField
-                        fullWidth
-                        sx={{
-                          borderRadius: "8px",
-                        }}
-                        type="text"
-                        title="title"
-                        value={values.title}
-                        placeholder="Product Title"
-                        onChange={handleChange("title")}
-                        helperText={touched.title ? errors.title : undefined}
-                        error={touched.title ? errors.title : undefined}
-                        touched={touched.title}
-                      />
-                    </Box>
-                    <Box>
-                      <Typography className="all_Lable_In_Components">
-                        {t("description")}
-                      </Typography>
-                      <TextField
-                        fullWidth
-                        sx={{
-                          borderRadius: "8px",
-                        }}
-                        type="description"
-                        title="description"
-                        placeholder="description"
-                        value={values.description}
-                        onChange={handleChange("description")}
-                        helperText={
-                          touched.description ? errors.description : undefined
-                        }
-                        error={
-                          touched.description ? errors.description : undefined
-                        }
-                        touched={touched.description}
-                      />
-                    </Box>
-                    <Box>
-                      <Typography className="all_Lable_In_Components">
-                        {t("total_quantity")}
-                      </Typography>
-                      <TextField
-                        fullWidth
-                        sx={{
-                          borderRadius: "8px",
-                        }}
-                        type="number"
-                        title="total_quantity"
-                        placeholder="Total Quantity"
-                        value={values.total_quantity}
-                        onChange={handleChange("total_quantity")}
-                        helperText={
-                          touched.total_quantity
-                            ? errors.total_quantity
-                            : undefined
-                        }
-                        error={
-                          touched.total_quantity
-                            ? errors.total_quantity
-                            : undefined
-                        }
-                        touched={touched.total_quantity}
-                      />
-                    </Box>
-                    <Box>
-                      <Typography className="all_Lable_In_Components">
-                        {t("price")}
-                      </Typography>
-
-                      <TextField
-                        fullWidth
-                        sx={{
-                          borderRadius: "8px",
-                        }}
-                        type="number"
-                        title="price"
-                        placeholder="Product price"
-                        value={values.price}
-                        onChange={handleChange("price")}
-                        helperText={touched.price ? errors.price : undefined}
-                        error={touched.price ? errors.price : undefined}
-                        touched={touched.price}
-                      />
-                    </Box>
-
-                    <Box>
-                      <Typography className="all_Lable_In_Components">
-                        {t("expiry")}
-                      </Typography>
-
-                      <TextField
-                        fullWidth
-                        id="date"
-                        type="date"
-                        onChange={(date) => setExpiryDate(date.target.value)}
-                        defaultValue={expiryDate}
-                        value={values.date}
-                        helperText={touched.date ? errors.date : undefined}
-                        error={touched.date ? errors.date : undefined}
-                        touched={touched.date}
-                      />
-                      {/*
-                      <TextField
-                        fullWidth
-                        sx={{
-                          borderRadius: "8px",
-                        }}
-                        type="text"
-                        title="expiry"
-                        value={values.expiry}
-                        onChange={handleChange("expiry")}
-                        placeholder="Product expiry date"
-                        helperText={touched.expiry ? errors.expiry : undefined}
-                        error={touched.expiry ? errors.expiry : undefined}
-                        touched={touched.expiry}
-                      /> */}
-                    </Box>
-                    <Box sx={{ mb: 2 }}>
-                      <Typography className="all_Lable_In_Components">
-                        {t("Currency")}
-                      </Typography>
-                      <FormControl sx={{ minWidth: "100%" }}>
-                        <Select
-                          placeholder="currency"
-                          value={values.currency}
-                          error={errors.currency}
-                          onChange={handleChange("currency")}
-                          inputProps={{
-                            sx: {
-                              ml: 1,
-                              height: "12px",
-                            },
-                          }}
-                        >
-                          <MenuItem
-                            value="INR"
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-between",
-                                width: "100%",
-                                height: "24px",
-                              }}
-                            >
-                              {t("INR")}
-                            </Box>
-                          </MenuItem>
-                          <MenuItem
-                            value="DOLLAR"
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-between",
-                                width: "100%",
-                                height: "24px",
-                              }}
-                            >
-                              {t("DOLLAR")}
-                            </Box>
-                          </MenuItem>
-                        </Select>
-
-                        <FormHelperText>{errors.currency}</FormHelperText>
-                      </FormControl>
-                    </Box>
-                    <Box sx={{ mb: 2 }}>
-                      <Typography className="all_Lable_In_Components">
-                        {t("Category")}
-                      </Typography>
-                      <FormControl sx={{ minWidth: "100%" }}>
-                        <Select
-                          value={values.category}
-                          error={errors.category}
-                          onChange={handleChange("category")}
-                          inputProps={{
-                            sx: {
-                              ml: 1,
-                              height: "12px",
-                            },
-                          }}
-                        >
-                          <MenuItem
-                            value="Veg"
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-between",
-                                width: "100%",
-                                height: "24px",
-                              }}
-                            >
-                              {t("veg")}
-
-                              <Typography sx={{ mt: 1 }}>
-                                <img src={vegIcon} alt="" height="30px" />
-                              </Typography>
-                            </Box>
-                          </MenuItem>
-                          <MenuItem
-                            value="Nonveg"
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-between",
-                                width: "100%",
-                                height: "24px",
-                              }}
-                            >
-                              {t("non_veg")}
-
-                              <Typography sx={{ mt: 1 }}>
-                                {" "}
-                                <img
-                                  src={NonvegIcon}
-                                  alt=""
-                                  height="30px"
-                                  weight="30"
-                                />
-                              </Typography>
-                            </Box>
-                          </MenuItem>
-                          <MenuItem
-                            value="Vegan"
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <Box
-                              sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "space-between",
-                                width: "100%",
-                                height: "24px",
-                              }}
-                            >
-                              {t("vegan")}
-                              <Typography sx={{ mt: 1 }}>
-                                {" "}
-                                <img
-                                  src={VeganIcon}
-                                  alt=""
-                                  height="30px"
-                                  weight="30"
-                                />
-                              </Typography>
-                            </Box>
-                          </MenuItem>
-                        </Select>
-
-                        <FormHelperText>{errors.category}</FormHelperText>
-                      </FormControl>
-                    </Box>
-                    {/* <Box>
-                      <input
-                        type="file"
-                        onChange={(e) => {
-                          {
-                            updations ? dataChanged(e) : ImageUpload(e);
-                          }
-                          handleOpen();
-                        }}
-                      />
-                    </Box> */}
-                    <Box position="relative" sx={{ pt: 2 }}>
-                      <Backdrop
-                        sx={{
-                          color: "#fff",
-                          zIndex: (theme) => theme.zIndex.drawer + 1,
-                        }}
-                        open={openCircle}
-                        onClick={handleCloseCircle}
-                      >
-                        <CircularProgress color="inherit" />
-                      </Backdrop>
-                      {console.log("image", getProducts?.image)}
-                      <Avatar
-                        alt="T"
-                        src={getProducts?.image ? getProducts?.image : ""}
-                        sx={{ height: 100, width: 100 }}
-                      />
-
-                      <label htmlFor="upload-photo">
-                        <input
-                          style={{ display: "none", position: "relative" }}
-                          id="upload-photo"
-                          title="upload-photo"
-                          type="file"
-                        />
-
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            bottom: "65px",
-                            left: "65px",
-                            // backgroundColor: "white",
-                            // borderRadius: "100px",
-                          }}
-                        >
-                          {/* <EditIcon sx={{ height: 50 }} onClick={openDialogBox} /> */}
-
-                          <Button component="label">
-                            <EditIcon
-                              sx={{
-                                border: "1px solid #1976d2",
-                                borderRadius: "50%",
-                              }}
-                            />
-                            <input
-                              hidden
-                              type="file"
-                              onChange={(e) => {
-                                // setFile(URL.createObjectURL(e.target.files[0]))
-                                {
-                                  updations ? dataChanged(e) : ImageUpload(e);
-                                }
-                                handleOpen();
-                              }}
-                            />
-                          </Button>
-                        </Box>
-                        <br />
-                        <br />
-                      </label>
-                    </Box>
-
-                    <Box>
-                      <Button
-                        variant="contained"
-                        type="Submit"
-                        className="all_Buttons_in_Page"
-                        fullWidth
-                        sx={{
-                          backgroundColor: "#4F46E5",
-                          mt: 3,
-                          height: "60px",
-                          borderRadius: "8px",
-                          textTransform: "capitalize",
-                        }}
-                      >
-                        {" "}
-                        {updations
-                          ? "Edit Details"
-                          : `${t("Add Products")}`}{" "}
-                      </Button>
-                    </Box>
-                  </Form>
-                )}
-              </Formik>
-            </Box>
-          </DialogTitle>
-        </Box>
-      </Dialog>
+              : {
+                  title: "",
+                  id: "",
+                  total_quantity: "",
+                  description: "",
+                  currency: "INR",
+                  price: "",
+                  created: moment().format("DD/MM/YYYY"),
+                  category: "Veg",
+                }
+          }
+          validationSchema={ProductSchema}
+          validateOnChange={true}
+          validateOnBlur={false}
+          onSubmit={(values) => {
+            submitData(values);
+          }}
+        >
+          {({ errors, values, handleChange, touched }) => (
+            <Form id={FORM_ID} noValidate>
+              <Box sx={{ mb: 3, "& label[for]": { aspectRatio: "5 / 2" } }}>
+                <ImageUploadField
+                  variant="cover"
+                  label={t("image", "Image")}
+                  helperText="PNG or JPG, a clear shot of the product"
+                  value={updations ? previewImage ?? getProducts?.image : newImage}
+                  uploading={openCircle}
+                  onFileSelect={(file) => {
+                    setCircleOpen(true);
+                    if (updations) dataChanged(file);
+                    else ImageUpload(file);
+                  }}
+                />
+              </Box>
+              <Grid container spacing={2}>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <TextField
+                    label={t("title", "Title")}
+                    type="text"
+                    value={values.title}
+                    onChange={handleChange("title")}
+                    {...fieldProps("title", touched, errors)}
+                  />
+                </Grid>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <TextField
+                    select
+                    label={t("Category", "Category")}
+                    value={values.category ?? ""}
+                    onChange={handleChange("category")}
+                    {...fieldProps("category", touched, errors)}
+                  >
+                    {categories.map((c) => (
+                      <MenuItem key={c.value} value={c.value}>
+                        <DietMarker category={c.value} />
+                        {c.label}
+                      </MenuItem>
+                    ))}
+                  </TextField>
+                </Grid>
+                <Grid size={12}>
+                  <TextField
+                    label={t("description", "Description")}
+                    multiline
+                    minRows={2}
+                    maxRows={5}
+                    value={values.description}
+                    onChange={handleChange("description")}
+                    {...fieldProps("description", touched, errors)}
+                  />
+                </Grid>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <TextField
+                    label={t("total_quantity", "Total quantity")}
+                    type="number"
+                    value={values.total_quantity}
+                    onChange={handleChange("total_quantity")}
+                    {...fieldProps("total_quantity", touched, errors)}
+                    slotProps={{ htmlInput: { min: 0 } }}
+                  />
+                </Grid>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <TextField
+                    label={t("expiry_date", "Expiry date")}
+                    type="date"
+                    value={expiryInputValue}
+                    onChange={(e) => setExpiryDate(e.target.value)}
+                    slotProps={{ inputLabel: { shrink: true } }}
+                  />
+                </Grid>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <TextField
+                    select
+                    label={t("currency", "Currency")}
+                    value={values.currency ?? ""}
+                    onChange={handleChange("currency")}
+                    {...fieldProps("currency", touched, errors)}
+                  >
+                    <MenuItem value="INR">{t("INR", "INR (₹)")}</MenuItem>
+                    <MenuItem value="DOLLAR">{t("DOLLAR", "USD ($)")}</MenuItem>
+                  </TextField>
+                </Grid>
+                <Grid size={{ xs: 12, md: 6 }}>
+                  <TextField
+                    label={t("price", "Price")}
+                    type="number"
+                    value={values.price}
+                    onChange={handleChange("price")}
+                    {...fieldProps("price", touched, errors)}
+                    slotProps={{
+                      input: {
+                        startAdornment: (
+                          <InputAdornment position="start">{CURRENCY_SYMBOL[values.currency] ?? ""}</InputAdornment>
+                        ),
+                      },
+                      htmlInput: { min: 0, step: "any" },
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </Form>
+          )}
+        </Formik>
+      </FormDialog>
 
       <AlertComponent
-        text={
-          showAlert
-            ? "User Already exist"
-            : showAlert1
-            ? "Details Updated"
-            : "User Added"
-        }
+        text={showAlert ? "User Already exist" : showAlert1 ? "Details Updated" : "User Added"}
         option2="Ok"
         show={showAlert}
         setShow={setShowAlert}

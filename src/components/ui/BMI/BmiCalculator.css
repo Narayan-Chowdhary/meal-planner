@@ -1,13 +1,1 @@
-.bmiBackground{
-    background-image: url('../../../assests/greenBoard.webp');
-    background-position: center;
-    background-size: cover;
-
-}
-
-.input_Box_Bmi{
-    display: flex;
-    gap: 20px;
-    text-align: center;
-}
-
+/* Styles live in BmiCalculator.jsx (MUI sx + theme). */

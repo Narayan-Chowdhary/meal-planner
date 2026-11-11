@@ -1,54 +1,39 @@
-import React, { useEffect, useState } from "react";
-import ExpandLessTwoToneIcon from '@mui/icons-material/ExpandLessTwoTone';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import './style.css';
+import { useEffect, useState } from "react";
+import { Fab, Tooltip, Zoom } from "@mui/material";
+import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 
-export const ScrollToTop = ({ scrollToTop, scrollToBottom }) => {
-    const [showTopBtn, setShowTopBtn] = useState(false);
-    const [scrollHeight, setScrollHeight] = useState(false);
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                setShowTopBtn(true);
-                setScrollHeight(window.pageYOffset>2000?(window.pageYOffset/2):0)    
-            } else {
-                setShowTopBtn(false);
-            }
-        });
+/** Floating "back to top" button (bottom-left, so it never collides with the chatbot). */
+export const ScrollToTop = () => {
+  const [visible, setVisible] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-        
-        
-    }, []);
-    const goToTop = () => {
-        setScrollHeight((pre)=>pre<700?0:pre)
-
-
-        window.scrollTo({
-            top: scrollHeight,
-            behavior: "smooth",
-        });
-    };
-
-    const goToBottom = () => {
-        window.scrollTo({
-            top: 8000,
-            behavior: 'smooth',
-        });
-    };
-
-    return (
-        <>
-            {showTopBtn && <>
-                {scrollToTop && <ExpandLessTwoToneIcon
-                    className="top-icon-position icon-style"
-                    onClick={goToTop}
-                />}
-                {scrollToBottom && <ExpandMoreTwoToneIcon
-                    className="bottom-icon-position icon-style"
-                    onClick={goToBottom}
-                />}
-            </>}
-        </>
-    )
-}
+  return (
+    <Zoom in={visible}>
+      <Tooltip title="Back to top" placement="right">
+        <Fab
+          size="medium"
+          aria-label="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          sx={{
+            position: "fixed",
+            left: { xs: 16, md: 28 },
+            bottom: { xs: 16, md: 28 },
+            zIndex: 1200,
+            bgcolor: "background.paper",
+            color: "primary.main",
+            boxShadow: "var(--mp-shadow-lg)",
+            "&:hover": { bgcolor: "primary.main", color: "#fff" },
+          }}
+        >
+          <KeyboardArrowUpRoundedIcon />
+        </Fab>
+      </Tooltip>
+    </Zoom>
+  );
+};

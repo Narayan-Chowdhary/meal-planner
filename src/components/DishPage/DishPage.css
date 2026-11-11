@@ -7,7 +7,7 @@
 }
 
 .Bmi_Box {
-    background-color:#4F46E5;
+    background-color:var(--mp-primary);
     /* width: 20px;
     height: 12vh; */
     display: flex;

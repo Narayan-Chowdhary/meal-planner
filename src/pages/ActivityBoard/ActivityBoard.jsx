@@ -39,7 +39,7 @@ function ActivityBoard() {
         <Box display={"flex"} p={1}>
           <Grid container spacing={2}>
             {kanbanCardTypes.map((v, i) => (
-              <Grid item xs={4} key={i}>
+              <Grid key={i} size={4}>
                 <Box
                   onDragOver={(event) => event.preventDefault()}
                   onDrop={(event) => handleDrop(event, tasks, setTasks, v)}

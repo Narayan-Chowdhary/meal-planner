@@ -1,0 +1,42 @@
+# Meal Planner — full stack in containers.
+#
+#   docker compose up --build        -> http://localhost:8080
+#
+# VITE_* values are read from your .env file (see .env.example) and baked
+# into the web bundle at build time.
+
+name: meal-planner
+
+services:
+  web:
+    build:
+      context: .
+      target: web
+      args:
+        VITE_API_BASE_URL: /api/
+        VITE_GOOGLE_CLIENT_ID: ${VITE_GOOGLE_CLIENT_ID:-}
+        VITE_FIREBASE_DATABASE_URL: ${VITE_FIREBASE_DATABASE_URL:-}
+        VITE_CLOUDINARY_UPLOAD_URL: ${VITE_CLOUDINARY_UPLOAD_URL:-}
+        VITE_RAZORPAY_KEY_ID: ${VITE_RAZORPAY_KEY_ID:-}
+    image: meal-planner-web:latest
+    ports:
+      - "${WEB_PORT:-8080}:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      target: api
+    image: meal-planner-api:latest
+    # Exposed for debugging; the web app reaches it internally via /api/
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - api-data:/data # persists db.json changes across restarts
+    restart: unless-stopped
+
+volumes:
+  api-data:

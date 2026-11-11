@@ -28,7 +28,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 
 
 
@@ -96,7 +96,7 @@ function FitnessReport() {
     datasets: [
       {
         label: "meal data",
-        data: labels.map(() => faker.datatype.number({ min: 0, max: 200 })),
+        data: labels.map(() => faker.number.int({ min: 0, max: 200 })),
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
@@ -120,20 +120,20 @@ function FitnessReport() {
 
           <Stack spacing={1}>
             <Grid container>
-              <Grid items xs={4}>
+              <Grid size={4}>
                 Name:
                 <Typography variant="button">{getUserDetails.name}</Typography>
               </Grid>
-              <Grid items xs={4}>
+              <Grid size={4}>
                 Phone:
                 <Typography variant="button">{getUserDetails.phone}</Typography>
               </Grid>
-              <Grid items xs={4}>
+              <Grid size={4}>
                 Date: {Date()}
               </Grid>
             </Grid>
             <Grid container>
-              <Grid items xs={4}>
+              <Grid size={4}>
                 Email:
                 <Typography variant="button">{getUserDetails.email}</Typography>
               </Grid>
@@ -142,9 +142,9 @@ function FitnessReport() {
           <Divider />
           <Stack spacing={8}>
             <Grid container>
-              <Grid item>Total meal: {allMeals}</Grid>
+              <Grid>Total meal: {allMeals}</Grid>
               <Grid container>
-                <Grid item>
+                <Grid>
                   <Bar options={options} data={data} />
                 </Grid>
               </Grid>

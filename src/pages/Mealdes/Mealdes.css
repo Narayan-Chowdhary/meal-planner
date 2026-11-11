@@ -1,21 +1,15 @@
+/* Planned meals page. Most styling lives in MUI sx props; these are small tweaks. */
 
+.mealdes-day {
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem) !important;
+}
+
+.mealcard img {
+  transition: opacity 0.6s ease, transform 0.9s var(--mp-ease) !important;
+}
 
 @media screen and (max-width: 500px) {
-
-    .text{
-        font-size: 16px !important;
-    }
-.headingtext{
-    font-size: 24px !important;
-}
-.mealcard{
-min-width: 100px!important;
-}
-.css-2imjyh{
-    flex-wrap:nowrap !important
-}
-.cardButton{
-    font-weight: 400!important;
-    padding: 10px !important;
-}
+  .mealcard .MuiFormControlLabel-label {
+    font-size: 13px !important;
+  }
 }

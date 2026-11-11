@@ -1,16 +1,96 @@
-TO start SERVER 
+# Meal Planner
 
-RUN COMMAND :    npm run dev
+A React app for planning meals, managing recipes and groceries, with role-based access (admin / user / guest), English & Hindi translations, a meal calendar and a chatbot.
 
+## Tech stack
 
+| Area      | Tools |
+|-----------|-------|
+| Build     | [Vite](https://vite.dev) |
+| UI        | React 19, MUI 9 (`@mui/material`, `@mui/x-data-grid`) with a custom theme |
+| Motion    | [Motion](https://motion.dev) (`motion/react`), respects "reduce motion" |
+| Routing   | React Router (`react-router`) with lazy-loaded routes |
+| State     | Redux Toolkit |
+| Forms     | Formik + Yup |
+| i18n      | i18next (`public/assets/locales/{en,hi}`) |
+| Mock API  | [json-server](https://github.com/typicode/json-server) serving `db.json` |
+| Testing   | Vitest + Testing Library |
+| Linting   | ESLint (flat config) |
 
-The "Meal Planner" is a React.js project that offers a comprehensive solution for managing meals and recipes. The application leverages React's capabilities to create an interactive and user-friendly experience. Here is a description of the project's key features:
-Data Fetching and Filtering: The Meal Planner fetches data from an API and provides a user-friendly interface to browse and search for meals based on specific keywords. Users can easily filter the displayed data to find meals that match their preferences.
-Login and Signup with Formik: The project incorporates Formik, a popular form library for React, to handle the login and signup processes. Users can securely create accounts and log in using their credentials, providing a personalized experience.
-CRUD Operations: The Meal Planner implements Create, Read, Update, and Delete (CRUD) functionality to manage recipes. Users can add new recipes, view existing recipes, update recipe details, and delete recipes they no longer need.
-User Roles: The application distinguishes between three types of users: admin, user, and guest. Each role has different levels of access and permissions within the app. Admin users have the ability to manage user data, including adding, deleting, and updating user information.
-Translation: To cater to a diverse user base, the Meal Planner includes a translation feature that allows users to switch between English and Hindi. This enables users to interact with the app in their preferred language, enhancing accessibility and usability.
-Recipe Management: The project includes dedicated pages for adding and editing recipes. Users can easily create new recipes by filling out relevant details, such as ingredients, instructions, and cooking times. Additionally, users have the ability to modify existing recipes as needed.
-React Big Calendar Integration: The Meal Planner integrates the React Big Calendar component to provide an intuitive and visually appealing calendar view. This feature allows users to organize their meals and plan their schedules efficiently. The calendar supports adding, editing, and deleting events.
-User Data Management by Admin: Admin users have exclusive access to manage user data within the application. They can add new users, delete existing user accounts, and update user information as necessary. This feature empowers administrators to maintain the system and ensure data accuracy.
-Overall, the Meal Planner project combines various functionalities, including data fetching, filtering, user authentication, CRUD operations, user roles, translation, recipe management, and calendar integration. These features work together to create a robust and user-friendly application for organizing and planning meals efficiently.
+## Getting started
+
+Requires **Node.js 20.19+**.
+
+```bash
+npm install
+cp .env.example .env     # then fill in the values
+npm run dev              # starts the app (http://localhost:3000) and the API (http://localhost:8000)
+```
+
+## Run with Docker
+
+Requires Docker with Compose v2.
+
+```bash
+cp .env.example .env          # VITE_* values are baked into the bundle at build time
+docker compose up --build     # app: http://localhost:8080 · API: http://localhost:8000
+```
+
+There are two services:
+- **web:** an unprivileged nginx serving the built bundle. It adds SPA routing, gzip, long-term caching for build assets and security headers, and proxies `/api/` to the API.
+- **api:** json-server serving `db.json`. Changes persist in the `api-data` volume.
+
+Useful commands:
+
+```bash
+docker compose down              # stop
+docker compose down -v           # stop and reset the API data to db.json
+WEB_PORT=9000 docker compose up  # use another port
+docker build -t meal-planner-web .   # build just the web image
+```
+
+The app talks to the API on the same origin (`/api/`), so there's no CORS to configure. The relevant files are `Dockerfile`, `docker-compose.yml` and `docker/nginx.conf`.
+
+## Scripts
+
+| Command            | Description |
+|--------------------|-------------|
+| `npm run dev`      | Run web app and mock API together |
+| `npm start`        | Web app only (Vite dev server) |
+| `npm run server`   | Mock API only (json-server on port 8000) |
+| `npm run build`    | Production build into `build/` |
+| `npm run preview`  | Serve the production build locally |
+| `npm run lint`     | Lint the project |
+| `npm test`         | Run tests in watch mode |
+| `npm run test:run` | Run tests once (CI) |
+
+## Configuration
+
+All environment-specific values live in `.env` (see `.env.example`); `src/config.js` is the single place the app reads them from. Only `VITE_`-prefixed variables reach the browser, so never put server-side secrets there.
+
+> **Note:** `db.json` is demo data for json-server and contains plain-text demo passwords. Do not reuse real credentials in it. json-server v1 stores all record ids as strings.
+
+## Design system
+
+- **Theme:** `src/theme/theme.js` sets the MUI palette (burnt orange and herb green on cream), Fraunces for headings, Plus Jakarta Sans for body text, and component styles. The same values are mirrored as CSS variables (`--mp-*`) in `src/index.css`, so plain CSS can use them too.
+- **Images:** `src/theme/images.js` holds a curated pool of verified Unsplash food photos, with helpers for responsive URLs (`unsplash()`, `unsplashSrcSet()`). It picks a stable "random" photo per recipe (`foodImageFor()`) and resizes uploaded Cloudinary images (`optimizeImage()`).
+- **Shared components** in `src/components/common/`:
+  - `FoodImage`: lazy loading, shimmer placeholder, fade-in and an Unsplash fallback.
+  - `Motion`: `Reveal`, `Stagger`, `StaggerItem` and `PageTransition`.
+  - `SectionHeading`, `AuthLayout` and `RequireAuth`.
+- **Recipe card:** `RecipeCard` in `src/components/ui/Card/` has grid and list layouts.
+
+## Features
+
+- **Recipes:** browse, search/filter, add, edit and delete recipes, including bulk import from CSV.
+- **Auth:** login and signup with Formik validation, plus Google sign-in.
+- **Roles:** admin, user and guest. Admins manage users, products and orders.
+- **Translation:** switch between English and Hindi.
+- **Meal planner:** plan meals on a calendar (react-big-calendar).
+- **Shopping:** groceries, cart and Razorpay test checkout.
+- **Extras:** fitness report charts and the "Mealot" chatbot.
+
+## Known limitations
+
+- The recipe video tutorial page uses restcountries.com for country flags. That service retired its keyless endpoints, so flags are skipped until an API key and the v5 API are wired in.
+- `npm run lint` reports warnings for legacy patterns, such as state mutation and `setState` inside effects. They are tracked as warnings in `eslint.config.js` and should be fixed one component at a time.

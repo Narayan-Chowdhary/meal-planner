@@ -1,502 +1,271 @@
-import {
-  base_url,
-  getFoodAPIEndpoint,
-  getMealAPIEndpoint,
-  getIngredientAPIEndpoint,
-} from "../../../config";
-import {
-  Box,
-  Chip,
-  Container,
-  Divider,
-  Grid,
-  Paper,
-  Stack,
-  Typography,
-  Button,
-  Checkbox,
-} from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
-/// icon
-import CreateIcon from "@mui/icons-material/Create";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import CalendarViewMonthIcon from "@mui/icons-material/CalendarViewMonth";
-import TableRowsIcon from "@mui/icons-material/TableRows";
-import dummyImage from "../../../assests/FoodBg.jpeg";
-import DeleteIcon from "@mui/icons-material/Delete";
-import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
-import VeganIcon from "../../../assests/green-leaf-icon.png";
-import NonvegIcon from "../../../assests/non-veg-icon.png";
-import vegIcon from "../../../assests/veg-icon.png";
+import {
+  Box, Button, Chip, Container, Grid, IconButton, InputAdornment, Paper, Skeleton, Stack, TextField,
+  ToggleButton, ToggleButtonGroup, Tooltip, Typography,
+} from "@mui/material";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
+import ViewAgendaRoundedIcon from "@mui/icons-material/ViewAgendaRounded";
+import AddRoundedIcon from "@mui/icons-material/AddRounded";
+import EditRoundedIcon from "@mui/icons-material/EditRounded";
+import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
+import ChecklistRoundedIcon from "@mui/icons-material/ChecklistRounded";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
+import RestaurantRoundedIcon from "@mui/icons-material/RestaurantRounded";
 
-///components
+import { base_url, getFoodAPIEndpoint, getIngredientAPIEndpoint } from "../../../config";
+import { fetchRecipeData } from "../../../Services/APIEngine";
+import { getCurrentUser } from "../../../Services/session";
 import AlertComponent from "../Alert/Alert";
 import Footer from "../../../pages/Footer/Footer";
 import Header from "../Header/Header";
-import "./RecipeSuggestionPage.css";
-//Sevices
-import { fetchRecipeData } from "../../../Services/APIEngine";
+import RecipeCard from "../Card/RecipeCard";
+import SectionHeading from "../../common/SectionHeading";
+import { Reveal, Stagger, StaggerItem } from "../../common/Motion";
+import { ScrollToTop } from "../../ScrollToTop/ScrollToTop";
+
+const CATEGORIES = [
+  { name: "all", key: "all" },
+  { name: "veg", key: "Veg" },
+  { name: "non_veg", key: "Nonveg" },
+  { name: "vegan", key: "Vegan" },
+];
+
+const capitalize = (s) => String(s).charAt(0).toUpperCase() + String(s).slice(1);
+
+function FilterGroup({ title, children }) {
+  return (
+    <Box>
+      <Typography variant="overline" color="text.secondary">{title}</Typography>
+      <Stack direction="row" sx={{ flexWrap: "wrap", gap: 1, mt: 1 }}>{children}</Stack>
+    </Box>
+  );
+}
 
 function RecipeSuggestionPage() {
-  const NavigationToPage = useNavigate();
+  const nav = useNavigate();
   const { t } = useTranslation();
+  const canEdit = getCurrentUser().role === "user";
 
-  //States
-  const [Food, setFood] = useState();
-  const [foodShow, setFoodShow] = useState([]);
-  const [Ingredient, setIngredient] = useState();
-  const [isLogin, setIsLogin] = useState(false);
-  const [chipColor, setChipColor] = useState(null);
-  const [selectedFoodCategory, setselectedFoodCategory] = useState("all");
-  const [calendarView, setCalendarView] = useState(true);
-  const [id, setId] = useState(0);
-  const [openalert, setOpenAlert] = useState(false);
-  const [deleteAll, setDeleteAll] = useState(false);
-  const [collectIdToDelete, setCollectIdToDelete] = useState([]);
+  const [recipes, setRecipes] = useState(null);
+  const [ingredients, setIngredients] = useState([]);
+  const [category, setCategory] = useState("all");
+  const [ingredient, setIngredient] = useState(null);
+  const [search, setSearch] = useState("");
+  const [gridView, setGridView] = useState(true);
 
-  //Default Data
-  const foodCategory = [
-    { FIndex: 0, name: "all", key: "all" },
-    { FIndex: 1, name: "veg", key: "Veg" },
-    { FIndex: 2, name: "non_veg", key: "Nonveg" },
-    { FIndex: 3, name: "vegan", key: "Vegan" },
-  ];
+  // deletion
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
+  const [selectMode, setSelectMode] = useState(false);
+  const [selected, setSelected] = useState([]);
 
-  //Use Effect
+  const fetchRecipes = () =>
+    fetchRecipeData()
+      .then((data) => [...(data ?? [])].reverse().map((r) => ({ ...r, keyword: (r.keyword ?? []).map(capitalize) })))
+      .catch(() => []);
+  const loadRecipes = () => fetchRecipes().then(setRecipes);
+
   useEffect(() => {
-    const getRole = JSON.parse(localStorage.getItem("items"));
-    if (getRole) {
-      setIsLogin(getRole.role == "user");
-    }
-
-    FetchfoodData();
+    fetchRecipes().then(setRecipes);
+    fetch(`${base_url}${getIngredientAPIEndpoint}`)
+      .then((res) => (res.ok ? res.json() : []))
+      .then(setIngredients)
+      .catch(() => setIngredients([]));
   }, []);
 
-  const FetchfoodData = async () => {
-    let responseFood = await fetchRecipeData();
-    responseFood.reverse();
-    responseFood.map((e) => {
-      e.keyword = e.keyword.map((ele) => {
-        return (ele = ele.charAt(0).toUpperCase() + ele.substr(1));
-      });
-    });
-    setFood(responseFood);
-    setFoodShow(responseFood);
-    let responseIngredient = await fetch(
-      `${base_url}${getIngredientAPIEndpoint}`
+  const visible = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    return (recipes ?? []).filter(
+      (r) =>
+        (category === "all" || r.mealCatogary === category) &&
+        (!ingredient || r.keyword.includes(ingredient)) &&
+        (!q || r.title?.toLowerCase().includes(q) || r.description?.toLowerCase().includes(q))
     );
-    let responseIngred = await responseIngredient.json();
-    setIngredient(responseIngred);
+  }, [recipes, category, ingredient, search]);
 
-    // setChipColor(!chipColor);
+  const handleDelete = async (id) => {
+    await fetch(`${base_url}${getFoodAPIEndpoint}${id}`, { method: "DELETE" });
+    setSelected([]);
+    setSelectMode(false);
+    loadRecipes();
   };
 
-  const handleDelete = async (item) => {
-    await fetch(`${base_url}${getFoodAPIEndpoint}${item}`, {
-      method: "DELETE",
-      mode: "cors",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-    setCollectIdToDelete([]);
-    FetchfoodData();
+  const toggleSelected = (id, on) => setSelected((prev) => (on ? [...new Set([...prev, id])] : prev.filter((x) => x !== id)));
+
+  const clearFilters = () => {
+    setCategory("all");
+    setIngredient(null);
+    setSearch("");
   };
 
-  //Fumction Body Start
-  function sendFoodData(element) {
-    NavigationToPage("/dishPage", { state: { element } });
-  }
-
-  const handleFilter = (fc) => {
-    let foodShowVeg = Food?.filter((e) => {
-      return e.mealCatogary == fc;
-    });
-    setFoodShow(foodShowVeg);
-  };
-
-  const handleAny = () => {
-    setFoodShow(Food);
-    setChipColor(null);
-  };
-
-  const handleCheckIngredient = (ele) => {
-    setChipColor(ele.ingrid);
-    let foodShowIngrid = Food?.filter((e, i) => {
-      return e.keyword.includes(ele.ingrid);
-    });
-    setFoodShow(foodShowIngrid);
-  };
-
-  const handleCheckBox = (event, id) => {
-    if (event.target.checked) {
-      setCollectIdToDelete([...collectIdToDelete, id]);
-    } else {
-      setCollectIdToDelete(
-        collectIdToDelete?.filter((element) => element !== id)
-      );
-    }
-  };
-console.log("sararay", collectIdToDelete);
-  const handleCheckDeletion = () => {
-    if (deleteAll) {
-      setDeleteAll(!deleteAll);
-      setOpenAlert(true);
-    } else {
-      setDeleteAll(!deleteAll);
-    }
-  };
   return (
-    <>
+    <Box sx={{ minHeight: "100dvh", display: "flex", flexDirection: "column" }}>
       <Header longHeader />
 
-      <Box className="home_BackGround_Color">
-        <Container maxWidth="xl" sx={{ pb: 1 }} className="container_ClassBox">
-          <Stack spacing={3}>
-            <Box>
-              <Grid container sx={{ color: "#4F46E5", fontFamily: "Inter" }}>
-                <Grid item xs={6} sm={5} md={2}>
-                  <Typography variant="h3" sx={{ marginTop: "20px" }}>
-                    {" "}
-                    {t("recipe")}
-                  </Typography>
-                </Grid>
-                <Grid item xs={6} sm={7} md={10} sx={{ pt: 3 }}>
-                  <Divider
-                    sx={{
-                      border: "2px solid #4F46E5",
-                      borderRadius: " 5px",
-                      marginTop: "20px",
-                    }}
-                  />
-                </Grid>
-              </Grid>
-            </Box>
-            <Stack spacing={3}>
-              <Box
-                sx={{
-                  display: foodShow?.length !== 0 ? "flex" : "none",
-                  justifyContent: "start",
-                  gap: "20px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Typography>{t("meal_category")}</Typography>
-                {foodCategory?.map((fc, ic) => (
-                  <Box key={ic}>
-                    <Chip
-                      className={
-                        selectedFoodCategory === fc?.key ? "chipBackground" : ""
-                      }
-                   
-                      key={fc?.FIndex}
-                      label={t(fc?.name)}
-                      onClick={() => {
-                        setselectedFoodCategory(fc?.key);
-                        if (fc?.key === "all") {
-                          handleAny();
-                        } else {
-                          handleFilter(fc?.key);
-                        }
-                      }}
-                    />
-                  </Box>
-                ))}
-              </Box>
-
-              <Box
-                sx={{
-                  display: foodShow?.length !== 0 ? "flex" : "none",
-                  justifyContent: "start",
-                  gap: "20px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Typography>{t("meal_ingredients")}</Typography>{" "}
-                <Box>
-                  <Chip
-                    className={!chipColor ? "chipBackground" : ""}
-                    label={t?.("All")}
-                    onClick={handleAny}
-                  />
-                </Box>
-                {foodShow?.length != 0 &&
-                  Ingredient?.map((ele, index) => {
-                    return (
-                      <Box key={index}>
-                        <Chip
-                          className={
-                            ele.ingrid === chipColor ? "chipBackground" : ""
-                          }
-                          sx={{
-                            color: ele.ingrid === chipColor ? "white" : "",
-                          }}
-                          label={t(ele.ingrid)}
-                          onClick={() => {
-                            handleCheckIngredient(ele);
-                          }}
-                        />
-                      </Box>
-                    );
-                  })}
-              </Box>
-
-              <Grid container columnSpacing={{ xs: 5 }}>
-                <Grid item xs={3} sm={9} md={9}>
-                  <Button
-                    variant="contained"
-                    className="all_Buttons_in_Page"
-                    onClick={() => {
-                      NavigationToPage("/addrecipe/:id");
-                    }}
-                  >
-                    {t("add_recipe")}
-                  </Button>
-                </Grid>
-                <Grid item xs={3} sm={3} md={3}>
-                  <Box>
-                    <Button
-                      sx={{ mr: 2 }}
-                      variant="contained"
-                      className={
-                        calendarView ? "all_Buttons_in_Page" : "btn-secondary"
-                      }
-                      onClick={() => setCalendarView(true)}
-                    >
-                      <CalendarViewMonthIcon />
+      <Container component="main" sx={{ flex: 1, py: { xs: 4, md: 6 } }}>
+        <SectionHeading
+          overline="Recipe library"
+          title={t("all_recipe")}
+          subtitle={recipes ? `${visible.length} of ${recipes.length} recipes` : "Loading recipes…"}
+          actions={
+            canEdit && (
+              <Stack direction="row" spacing={1}>
+                {selectMode ? (
+                  <>
+                    <Button variant="outlined" startIcon={<CloseRoundedIcon />} onClick={() => { setSelectMode(false); setSelected([]); }}>
+                      Cancel
                     </Button>
-                    <Button
-                      sx={{ mr: 2 }}
-                      variant="contained"
-                      className={
-                        calendarView ? "btn-secondary" : "all_Buttons_in_Page"
-                      }
-                      onClick={() => setCalendarView(false)}
-                    >
-                      {" "}
-                      <TableRowsIcon />
+                    <Button variant="contained" color="error" startIcon={<DeleteOutlineRoundedIcon />} disabled={!selected.length} onClick={() => setConfirmOpen(true)}>
+                      Delete {selected.length || ""}
                     </Button>
-                    <Button
-                      // sx={{ mr: 2 }}
-                      variant="contained"
-                      className={
-                        calendarView ? "btn-secondary" : "all_Buttons_in_Page"
-                      }
-                      onClick={handleCheckDeletion}
-                    >
-                      {deleteAll ? (
-                        <DeleteIcon />
-                      ) : (
-                        <CheckBoxOutlineBlankIcon />
-                      )}
+                  </>
+                ) : (
+                  <>
+                    <Button variant="outlined" startIcon={<ChecklistRoundedIcon />} onClick={() => setSelectMode(true)}>
+                      Select
                     </Button>
-                  </Box>
-                </Grid>
-              </Grid>
-
-              <Box
-                sx={{
-                  maxHeight: "100vh",
-                  overflow: "auto",
-                }}
-              >
-                <Grid container spacing={2} sx={{ alignItems: "center", p: 2 }}>
-                  {foodShow.map((item, index) => {
-                    return (
-                      <>
-                        <Grid item xs={12} sm={4} md={calendarView ? 4 : 12}>
-                          <Paper
-                            key={index}
-                            elevation={1}
-                            sx={{
-                              mt: 2,
-                              // borderRadius: 5,
-                              borderTopLeftRadius: "30px",
-                              borderBottomRightRadius: "30px",
-                            }}
-                          >
-
-
-
-                            <Grid container sx={{ alignItems: "center", p: 2 }}>
-                              <Grid
-                                item
-                                xs={12}
-                                sm={12}
-                                md={calendarView ? 12 : 3}
-                              >
-                                <Box sx={{ position: 'relative' }}>
-                                  {item.img ? (
-                                    <img
-                                      src={item.img ? item.img : dummyImage}
-                                      alt="Image"
-                                      id="bpimage"
-                                      height="200px"
-                                      width={calendarView ? "100%" : "100%"}
-                                      style={{
-                                        borderTopLeftRadius: "30px",
-                                        borderBottomRightRadius: "30px",
-                                      }}
-                                    />
-                                  ) : (
-                                    <span>Loading</span>
-                                  )}
-
-                                  {deleteAll ? (
-                                    <Box
-                                      sx={{
-                                        position: 'absolute',
-                                        right: "-10px",
-                                        top: "-10px",
-                                        background: '#fff',
-                                      }}
-                                    >
-                                      <Checkbox
-                                        onClick={(event) => {
-                                          handleCheckBox(event, item.id);
-                                        }}
-                                      />
-                                    </Box>
-                                  ) : null}
-                                </Box>
-
-                              </Grid>
-                              <Grid xs={12} sm={12} md={calendarView ? 12 : 4} sx={{ minHeight: '120px', padding: '10px 0px', paddingLeft: calendarView ? '0px' : '20px' }}>
-                                <Box >
-
-                                  <Grid
-                                    container
-                                    display="flex"
-                                    justifyContent={"right"}
-                                    alignItems="center"
-                                  >
-                                    <Grid item lg={calendarView ? 6 : 12}
-                                      md={calendarView ? 6 : 12}s order={calendarView ?1:2}>
-                                      {" "}
-                                      <Typography
-                                        variant="h4"
-                                        className="Typography_Heading"
-                                      >
-                                        {item.title}
-                                      </Typography>
-                                    </Grid>
-                                    <Grid order={calendarView ?2:1}
-                                      item
-                                      // lg={6}
-                                      lg={calendarView ? 6 : 12}
-                                      md={calendarView ? 6 : 12}
-                                      display="flex"
-                                      justifyContent={calendarView ?"right":'start'}
-                                    >
-                                      <Typography>
-                                        {" "}
-                                        <img
-                                          src={
-                                            item.mealCatogary === "Nonveg"
-                                              ? NonvegIcon
-                                              : item.mealCatogary === "Veg"
-                                              ? vegIcon
-                                              : item.mealCatogary === "Vegan"
-                                              ? VeganIcon
-                                              : null
-                                          }
-                                          alt=""
-                                          height="25px"
-                                          width="25px"
-                                        />
-                                      </Typography>
-                                    </Grid>
-                                  </Grid>
-                                </Box>
-
-                                <Typography
-                                  // sx={{
-                                  //   // position: "relative",
-                                  //   // top: "5px",
-                                  //   whiteSpace: " nowrap",
-                                  //   // width: "s350px",
-                                  //   overflow: " hidden",
-                                  //   textOverflow: "ellipsis",
-                                  //   // paddingRight: "45px",
-                                  //   // lineHeight: "25px",
-                                  //   fontFamily: "Inter",
-                                  //   // fontSize: "18px",
-                                  //   textTransform: "capitalize",
-                                  //   // minHeight: "50px",
-                                  // }}
-                                  className="card_text"
-                                >
-                                  {item.description}
-                                </Typography>
-                              </Grid>
-                              <Grid xs={12} sm={12} md={calendarView ? 12 : 4}>
-                                <Box
-                                  sx={{
-                                    display: "flex",
-                                    alignItems: "right",
-                                    justifyContent: calendarView ? "space-between" : "right",
-                                  }}
-                                >
-                                  <Box>
-                                    <Button style={{fontSize:'20px',textDecoration: 'none'}} variant="h5" onClick={() => sendFoodData(item, index)}>More</Button>
-                                    {/* <VisibilityIcon
-                                      className="Icons_in-Page"
-                                      onClick={() => sendFoodData(item, index)}
-                                    /> */}
-                                  </Box>
-
-                                  {isLogin ? (
-                                    <Box sx={{ display: "flex" ,}}>
-                                      <Box>
-                                        <CreateIcon
-                                          className="Icons_in-card"
-                                          onClick={() => {
-                                            NavigationToPage(
-                                              `/addrecipe/${item.id}`
-                                            );
-                                          }}
-                                          style={{paddingRight:'5px'}}
-                                        />
-                                      </Box>
-                                      <Box>
-                                        <DeleteIcon
-                                          className="Icons_in-card"
-                                          onClick={() => {
-                                            setOpenAlert(true);
-                                            setId(item.id);
-                                          }}
-                                        />
-                                      </Box>
-                                    </Box>
-                                  ) : null}
-                                </Box>
-                              </Grid>
-                            </Grid>
-                          </Paper>
-                        </Grid>
-                      </>
-                    );
-                  })}
-                </Grid>
-              </Box>
-            </Stack>
-          </Stack>
-        </Container>
-        <AlertComponent
-          text="Are sure you want to delete?"
-          option1="Yes"
-          option2="No"
-          show={openalert}
-          setShow={setOpenAlert}
-          handeldelete={handleDelete}
-          dataid={id}
-          collectIdToDelete={collectIdToDelete}
+                    <Button variant="contained" startIcon={<AddRoundedIcon />} onClick={() => nav("/addrecipe/:id")}>
+                      {t("add_recipe")}
+                    </Button>
+                  </>
+                )}
+              </Stack>
+            )
+          }
         />
-      </Box>
+
+        {/* Filters toolbar */}
+        <Reveal>
+          <Paper sx={{ p: { xs: 2, md: 3 }, mb: 4 }}>
+            <Grid container spacing={3} sx={{ alignItems: "flex-end" }}>
+              <Grid size={{ xs: 12, md: 4 }}>
+                <TextField
+                  placeholder="Search by name or description…"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  slotProps={{ input: { startAdornment: <InputAdornment position="start"><SearchRoundedIcon /></InputAdornment> } }}
+                />
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                <FilterGroup title={t("meal_category")}>
+                  {CATEGORIES.map((c) => (
+                    <Chip
+                      key={c.key}
+                      label={t(c.name, capitalize(c.name.replace("_", "-")))}
+                      onClick={() => setCategory(c.key)}
+                      color={category === c.key ? "primary" : "default"}
+                      variant={category === c.key ? "filled" : "outlined"}
+                    />
+                  ))}
+                </FilterGroup>
+              </Grid>
+              <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+                <FilterGroup title={t("meal_ingredients")}>
+                  {ingredients.map((ing) => (
+                    <Chip
+                      key={ing.ingrid}
+                      label={ing.ingrid}
+                      onClick={() => setIngredient((cur) => (cur === ing.ingrid ? null : ing.ingrid))}
+                      color={ingredient === ing.ingrid ? "secondary" : "default"}
+                      variant={ingredient === ing.ingrid ? "filled" : "outlined"}
+                    />
+                  ))}
+                </FilterGroup>
+              </Grid>
+              <Grid size={{ xs: 12, md: 1 }} sx={{ display: "flex", justifyContent: { md: "flex-end" } }}>
+                <ToggleButtonGroup
+                  exclusive
+                  size="small"
+                  value={gridView ? "grid" : "list"}
+                  onChange={(_, v) => v && setGridView(v === "grid")}
+                  aria-label="Layout"
+                >
+                  <ToggleButton value="grid" aria-label="Grid view"><GridViewRoundedIcon fontSize="small" /></ToggleButton>
+                  <ToggleButton value="list" aria-label="List view"><ViewAgendaRoundedIcon fontSize="small" /></ToggleButton>
+                </ToggleButtonGroup>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Reveal>
+
+        {/* Results */}
+        {recipes === null ? (
+          <Grid container spacing={3}>
+            {Array.from({ length: 8 }).map((_, i) => (
+              <Grid key={i} size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+                <Skeleton variant="rounded" sx={{ aspectRatio: "3 / 4", height: "auto", borderRadius: "20px" }} />
+              </Grid>
+            ))}
+          </Grid>
+        ) : visible.length === 0 ? (
+          <Paper sx={{ textAlign: "center", py: 8, px: 3 }}>
+            <RestaurantRoundedIcon sx={{ fontSize: 48, color: "primary.main", mb: 1 }} />
+            <Typography variant="h5">No recipes match those filters</Typography>
+            <Typography color="text.secondary" sx={{ mt: 1, mb: 3 }}>Try another ingredient or clear your filters.</Typography>
+            <Button variant="contained" onClick={clearFilters}>Clear filters</Button>
+          </Paper>
+        ) : (
+          <Stagger key={`${category}-${ingredient}-${gridView}`}>
+            <Grid container spacing={3}>
+              {visible.map((item, index) => (
+                <Grid key={item.id ?? index} size={gridView ? { xs: 12, sm: 6, md: 4, lg: 3 } : { xs: 12, md: 6 }}>
+                  <StaggerItem>
+                    <RecipeCard
+                      recipe={item}
+                      layout={gridView ? "grid" : "list"}
+                      priority={index < 4}
+                      actionLabel={t("view_recipe")}
+                      onOpen={() => nav("/dishPage", { state: { element: item } })}
+                      selectable={selectMode}
+                      selected={selected.includes(item.id)}
+                      onSelect={(on) => toggleSelected(item.id, on)}
+                      actions={
+                        canEdit && (
+                          <>
+                            <Tooltip title="Edit">
+                              <IconButton size="small" onClick={() => nav(`/addrecipe/${item.id}`)} sx={{ bgcolor: "rgba(31,23,18,.05)" }}>
+                                <EditRoundedIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
+                            <Tooltip title="Delete">
+                              <IconButton
+                                size="small"
+                                color="error"
+                                onClick={() => { setDeleteId(item.id); setSelected([]); setConfirmOpen(true); }}
+                                sx={{ bgcolor: "rgba(197,48,48,.08)" }}
+                              >
+                                <DeleteOutlineRoundedIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
+                          </>
+                        )
+                      }
+                    />
+                  </StaggerItem>
+                </Grid>
+              ))}
+            </Grid>
+          </Stagger>
+        )}
+
+        <AlertComponent
+          text={selected.length > 1 ? `Delete ${selected.length} recipes?` : "Delete this recipe?"}
+          option1="Delete"
+          option2="Cancel"
+          show={confirmOpen}
+          setShow={setConfirmOpen}
+          handeldelete={handleDelete}
+          dataid={deleteId}
+          collectIdToDelete={selected}
+        />
+      </Container>
+
+      <ScrollToTop />
       <Footer />
-    </>
+    </Box>
   );
 }
 

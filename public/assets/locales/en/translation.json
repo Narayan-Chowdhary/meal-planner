@@ -115,6 +115,15 @@
   "update_keyword": "Update Keyword",
   "groceries": "Groceries",
   "home": "Home",
-  "currently_not_avialable":"Currently Not Avialable",
-  "add_to_cart":"Add To Cart"
+  "currently_not_avialable": "Currently Not Avialable",
+  "add_to_cart": "Add To Cart",
+  "hero_home_eyebrow": "Plan · Cook · Enjoy",
+  "hero_home_subtitle": "Plan your week, discover recipes you will love and keep your groceries in check — all in one place.",
+  "hero_recipes_eyebrow": "Cook something new",
+  "hero_recipes_subtitle": "Browse every recipe, filter by what you love and find tonight’s dinner in seconds.",
+  "hero_videos_eyebrow": "Learn by watching",
+  "hero_videos_subtitle": "Step-by-step video tutorials from kitchens around the world.",
+  "footer_tagline": "Good food starts with a good plan. Discover recipes, plan your meals and shop smarter — every day.",
+  "fitness_report": "Fitness Report",
+  "Welcome_admin": "Welcome back, Admin"
 }

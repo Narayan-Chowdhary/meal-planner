@@ -1,57 +1,99 @@
-@font-face {
-font-family: "Pacifico";
-src: local("Pacifico"),
-    url("./assests/fonts/Pacifico/Pacifico-Regular.ttf") format("truetype");
-font-weight: 400;
-}   
-.bg-clr{
-background-color: #4a47df !important;
+/* Legacy utility classes kept for older screens, now mapped to design tokens */
+.bg-clr {
+  background-color: var(--mp-primary) !important;
 }
-.clr{
-color: #4a47df;
+.clr {
+  color: var(--mp-primary);
 }
 
-.chatbot-widget {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
-}
-
-
+/* ---------- "Mealot" chatbot launcher ---------- */
 .app-chatbot-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    padding: 10px;
-    color: rgb(196, 27, 27);
-    border: none;
-    position: fixed;
-    bottom: 25px;
-    z-index: 9999;
-    right: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.6s ease-in-out;
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 1300;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  gap: 0;
+  padding: 10px;
+  cursor: pointer;
+  color: #fff;
+  font: 700 10px/1 var(--mp-font-body);
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, var(--mp-primary-light), var(--mp-primary) 55%, var(--mp-primary-dark));
+  box-shadow: var(--mp-shadow-lg);
+  animation: mp-pulse-ring 2.6s var(--mp-ease) infinite;
+  transition: transform 0.3s var(--mp-ease), box-shadow 0.3s;
 }
-
 .app-chatbot-button:hover {
-    transform: scale(1.1);
+  transform: translateY(-3px) scale(1.05);
+}
+.app-chatbot-button:active {
+  transform: scale(0.96);
+}
+.app-chatbot-button-icon {
+  width: 26px;
+  fill: #fff;
 }
 
 .app-chatbot-container {
-    margin: 40px 0;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    right: 40px;
-    bottom: 55px;
-    z-index: 9999;
-    box-shadow: 5px 5px 13px rgba(91, 81, 81, 0.4);
-    border-radius: 5px;
+  position: fixed;
+  right: clamp(16px, 3vw, 32px);
+  bottom: calc(clamp(16px, 3vw, 28px) + 76px);
+  z-index: 1300;
+  max-width: calc(100vw - 32px);
+  border-radius: var(--mp-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--mp-shadow-lg);
+  transform-origin: bottom right;
+  animation: mp-pop-in 0.35s var(--mp-ease);
 }
 
-.app-chatbot-button-icon {
-    fill: #fff;
+@keyframes mp-pop-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+/* react-chatbot-kit theming */
+.app-chatbot-container .react-chatbot-kit-chat-container {
+  width: min(360px, calc(100vw - 32px));
+  font-family: var(--mp-font-body);
+}
+.app-chatbot-container .react-chatbot-kit-chat-inner-container {
+  border-radius: var(--mp-radius-lg);
+  background: #fff;
+}
+.app-chatbot-container .react-chatbot-kit-chat-header {
+  background: var(--mp-ink);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0;
+}
+.app-chatbot-container .react-chatbot-kit-chat-message-container {
+  background: var(--mp-cream);
+}
+.app-chatbot-container .react-chatbot-kit-chat-bot-message {
+  background: var(--mp-primary);
+  border-radius: 14px;
+  margin-left: 8px;
+}
+.app-chatbot-container .react-chatbot-kit-chat-bot-message-arrow {
+  border-right-color: var(--mp-primary);
+}
+.app-chatbot-container .react-chatbot-kit-chat-btn-send {
+  background: var(--mp-primary);
+}
+.app-chatbot-container .react-chatbot-kit-chat-input:focus {
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .app-chatbot-button {
+    width: 56px;
+    height: 56px;
+  }
 }

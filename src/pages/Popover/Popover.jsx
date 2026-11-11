@@ -1,3 +1,4 @@
+import { firebaseDatabaseURL } from "../../config";
 import React, { useState, useEffect } from "react";
 
 import { useTranslation, initReactI18next } from "react-i18next";
@@ -26,7 +27,7 @@ import {
 
 //firebase Data
 const firebaseConfig = {
-  databaseURL: "https://meal-planner-390411-default-rtdb.firebaseio.com/",
+  databaseURL: firebaseDatabaseURL,
 };
 const app = initializeApp(firebaseConfig);
 

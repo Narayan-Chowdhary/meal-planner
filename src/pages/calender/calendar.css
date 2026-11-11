@@ -1,51 +1,370 @@
-.calnder {
-    font-family: "Inter" !important;
-    font-weight: 300 !important;
-    font-size: 15px !important;
+/* ------------------------------------------------------------------
+   react-big-calendar theme for the Meal Planner page.
+   Everything is scoped to .mp-calendar so other calendars are untouched.
+   ------------------------------------------------------------------ */
+
+.mp-calendar {
+  --cal-border: rgba(31, 23, 18, 0.08);
+  --cal-past: #faf6f1;
+  --cal-today: rgba(249, 115, 22, 0.1);
+  --cal-hover: rgba(194, 65, 12, 0.05);
+  --cal-breakfast-bg: #fdf3d7;
+  --cal-breakfast-fg: #7a5600;
+  --cal-breakfast-dot: #e0a100;
+  --cal-lunch-bg: #e3f1e9;
+  --cal-lunch-fg: #1f4d38;
+  --cal-lunch-dot: var(--mp-secondary);
+  --cal-dinner-bg: #fde6d8;
+  --cal-dinner-fg: var(--mp-primary-dark);
+  --cal-dinner-dot: var(--mp-primary);
+
+  font-family: var(--mp-font-body);
+  color: var(--mp-ink);
 }
 
-.rbc-toolbar {
-    font-size: 30px !important;
-    padding: 10px 0px;
-    color: #4F46E5 !important;
+/* ---------- Toolbar ---------- */
+.mp-calendar .rbc-toolbar {
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
 }
 
-
-.rbc-day-bg {
-
-    font-family: "Inter" !important;
-    font-weight: 300 !important;
-    font-size: 15px !important;
+.mp-calendar .rbc-toolbar .rbc-toolbar-label {
+  font-family: var(--mp-font-display);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--mp-ink);
 }
 
-.rbc-header {
-    font-size: 115%;
+.mp-calendar .rbc-btn-group {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--mp-cream);
+  border: 1px solid var(--cal-border);
 }
 
-.rbc-toolbar button {
-    margin:0px 5px ;
-    padding: 1rem 1rem;
-    color:#4F46E5 !important;
-    background-color:white !important;
-
-    font-family: "Inter" !important;
-    border-radius: 6px !important;
-   
-    text-Transform: none !important;
-    font-weight: 600 !important;
+.mp-calendar .rbc-toolbar button,
+.mp-calendar .rbc-btn-group > button:first-child:not(:last-child),
+.mp-calendar .rbc-btn-group > button:last-child:not(:first-child),
+.mp-calendar .rbc-btn-group > button:not(:first-child):not(:last-child) {
+  margin: 0;
+  min-height: 36px;
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--mp-muted);
+  font-family: var(--mp-font-body);
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-.rbc-event,.rbc-day-slot .rbc-background-event{
-
-font-family: "Inter" !important;
-}
-.rbc-today{
-    background-color: #bae6fd;
-    
+.mp-calendar .rbc-toolbar button:hover,
+.mp-calendar .rbc-toolbar button:focus {
+  background: rgba(194, 65, 12, 0.08);
+  color: var(--mp-primary-dark);
+  border: 0;
 }
 
+.mp-calendar .rbc-toolbar button:focus-visible {
+  outline: 2px solid var(--mp-primary);
+  outline-offset: 2px;
+}
 
+.mp-calendar .rbc-toolbar button:active,
+.mp-calendar .rbc-toolbar button.rbc-active,
+.mp-calendar .rbc-toolbar button.rbc-active:hover,
+.mp-calendar .rbc-toolbar button.rbc-active:focus {
+  background: var(--mp-primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.28);
+}
 
-.rbc-off-range-bg{
-    background-color: #efe8e8!important;
+.mp-calendar .rbc-btn-group + .rbc-btn-group,
+.mp-calendar .rbc-btn-group + button {
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .mp-calendar .rbc-toolbar {
+    gap: 10px;
+  }
+  .mp-calendar .rbc-toolbar .rbc-toolbar-label {
+    order: -1;
+  }
+}
+
+/* ---------- Month grid ---------- */
+.mp-calendar .rbc-month-view,
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table {
+  border: 1px solid var(--cal-border);
+  border-radius: var(--mp-radius);
+  overflow: hidden;
+  background: #fff;
+}
+
+.mp-calendar .rbc-month-row + .rbc-month-row,
+.mp-calendar .rbc-day-bg + .rbc-day-bg,
+.mp-calendar .rbc-header + .rbc-header {
+  border-color: var(--cal-border);
+}
+
+.mp-calendar .rbc-header {
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--cal-border);
+  background: #fbf4ec;
+  color: var(--mp-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mp-calendar .rbc-day-bg {
+  transition: background-color 0.2s;
+}
+
+.mp-calendar .rbc-month-view .rbc-day-bg:hover {
+  background-color: var(--cal-hover);
+}
+
+/* Days before today (set via dayPropGetter) */
+.mp-calendar .rbc-day-bg.mp-past-day,
+.mp-calendar .rbc-day-bg.mp-past-day:hover {
+  background-color: var(--cal-past);
+  cursor: default;
+}
+
+/* Days outside the current month */
+.mp-calendar .rbc-off-range-bg {
+  background-color: #f7f2ec;
+}
+.mp-calendar .rbc-off-range {
+  color: rgba(107, 94, 85, 0.5);
+}
+
+/* Today */
+.mp-calendar .rbc-day-bg.rbc-today,
+.mp-calendar .rbc-day-bg.rbc-today:hover {
+  background-color: var(--cal-today);
+}
+
+/* Date numbers */
+.mp-calendar .rbc-date-cell {
+  padding: 6px 8px 2px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mp-calendar .mp-date {
+  display: inline-grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 4px;
+  border-radius: 999px;
+  font: inherit;
+  color: var(--mp-ink);
+}
+
+.mp-calendar .mp-date--past,
+.mp-calendar .rbc-off-range .mp-date {
+  color: rgba(107, 94, 85, 0.6);
+  font-weight: 500;
+}
+
+.mp-calendar .rbc-now .mp-date {
+  background: var(--mp-primary);
+  color: #fff;
+  font-weight: 800;
+}
+
+/* Drag-to-select highlight */
+.mp-calendar .rbc-slot-selection,
+.mp-calendar .rbc-day-bg.rbc-selected-cell {
+  background-color: rgba(194, 65, 12, 0.12);
+}
+
+/* ---------- Events (meal chips) ---------- */
+.mp-calendar .rbc-row-segment {
+  padding: 1px 4px;
+}
+
+.mp-calendar .rbc-event,
+.mp-calendar .rbc-day-slot .rbc-background-event {
+  padding: 3px 8px;
+  border: 0;
+  border-left: 3px solid var(--mp-muted);
+  border-radius: 8px;
+  background-color: #f3eee9;
+  color: var(--mp-ink);
+  font-family: var(--mp-font-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+}
+
+.mp-calendar .rbc-event:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--mp-shadow-sm);
+  filter: saturate(1.15);
+}
+
+.mp-calendar .rbc-event:focus,
+.mp-calendar .rbc-event.rbc-selected {
+  outline: 2px solid var(--mp-primary);
+  outline-offset: 1px;
+}
+
+.mp-calendar .rbc-event.mp-event--breakfast {
+  background-color: var(--cal-breakfast-bg);
+  color: var(--cal-breakfast-fg);
+  border-left-color: var(--cal-breakfast-dot);
+}
+
+.mp-calendar .rbc-event.mp-event--lunch {
+  background-color: var(--cal-lunch-bg);
+  color: var(--cal-lunch-fg);
+  border-left-color: var(--cal-lunch-dot);
+}
+
+.mp-calendar .rbc-event.mp-event--dinner {
+  background-color: var(--cal-dinner-bg);
+  color: var(--cal-dinner-fg);
+  border-left-color: var(--cal-dinner-dot);
+}
+
+.mp-calendar .rbc-event.mp-event--past {
+  background-color: #f1ece6;
+  color: var(--mp-muted);
+  border-left-color: rgba(107, 94, 85, 0.4);
+}
+
+.mp-calendar .rbc-show-more {
+  margin-left: 6px;
+  background: transparent;
+  color: var(--mp-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* "+N more" popup */
+.rbc-overlay {
+  border: 1px solid rgba(31, 23, 18, 0.08);
+  border-radius: var(--mp-radius);
+  box-shadow: var(--mp-shadow-lg);
+  padding: 10px;
+}
+.rbc-overlay-header {
+  margin: -10px -10px 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(31, 23, 18, 0.08);
+  font-family: var(--mp-font-display);
+  font-weight: 700;
+}
+
+/* ---------- Agenda view ---------- */
+.mp-calendar .rbc-agenda-view {
+  overflow: auto;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table thead > tr > th {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--cal-border);
+  background: #fbf4ec;
+  color: var(--mp-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr > td {
+  padding: 12px 14px;
+  vertical-align: middle;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr + tr,
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr > td + td {
+  border-color: var(--cal-border);
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr > td.rbc-agenda-date-cell {
+  font-weight: 700;
+  color: var(--mp-ink);
+  white-space: nowrap;
+}
+
+.mp-calendar .rbc-agenda-time-cell {
+  color: var(--mp-muted);
+  text-transform: none;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr {
+  transition: filter 0.2s;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr > td.rbc-agenda-event-cell {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr.mp-event {
+  background: transparent;
+  border: 0;
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr.mp-event--breakfast > td.rbc-agenda-event-cell {
+  box-shadow: inset 3px 0 0 var(--cal-breakfast-dot);
+  background-color: var(--cal-breakfast-bg);
+  color: var(--cal-breakfast-fg);
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr.mp-event--lunch > td.rbc-agenda-event-cell {
+  box-shadow: inset 3px 0 0 var(--cal-lunch-dot);
+  background-color: var(--cal-lunch-bg);
+  color: var(--cal-lunch-fg);
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr.mp-event--dinner > td.rbc-agenda-event-cell {
+  box-shadow: inset 3px 0 0 var(--cal-dinner-dot);
+  background-color: var(--cal-dinner-bg);
+  color: var(--cal-dinner-fg);
+}
+
+.mp-calendar .rbc-agenda-view table.rbc-agenda-table tbody > tr.mp-event--past > td.rbc-agenda-event-cell {
+  color: var(--mp-muted);
+}
+
+.mp-calendar .rbc-agenda-empty {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--mp-muted);
+}
+
+@media (max-width: 600px) {
+  .mp-calendar .rbc-event {
+    padding: 2px 5px;
+    font-size: 11px;
+  }
+  .mp-calendar .rbc-date-cell {
+    padding: 4px 4px 0;
+  }
+  .mp-calendar .mp-date {
+    min-width: 22px;
+    height: 22px;
+  }
 }

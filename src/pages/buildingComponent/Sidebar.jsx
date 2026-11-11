@@ -52,7 +52,7 @@ const Sidebar = () => {
             border: "1px solid #FFF",
           }}
         >
-          <Typography color="#FFF" fontWeight="800" fontFamily="Inter">
+          <Typography color="#FFF" fontWeight="800" fontFamily="var(--mp-font-body)">
             {item.name}
           </Typography>
         </Box>

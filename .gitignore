@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# production build
+build/
+dist/
+
+# testing
+coverage/
+
+# environment (commit .env.example instead)
+.env
+.env.local
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
